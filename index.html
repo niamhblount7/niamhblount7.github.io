@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Niamh Blount's GitHub Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to an optional external CSS file -->
+    <title>Niamh Blount's GitHub Page</title>
     <style>
+        /* Add your existing styles here */
+        @font-face { font-family: "Stag Black Italic"; src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype"); font-weight: normal; font-style: italic; }
+        /* ...other font-face declarations... */
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            margin-top: 0 !important;
+            font-family: Arial, sans-serif; /* Fallback font */
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+        
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
-        main {
-            margin: 20px 0;
-            text-align: center;
-        }
-        a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
+        
+        .content {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Niamh Blount's GitHub Page!</h1>
-    </header>
-    
     <main>
+        <h1>Welcome to Niamh Blount's GitHub Page!</h1>
         <p>This is a simple webpage hosted on GitHub Pages.</p>
         <p>Feel free to explore my projects and repositories!</p>
         <p>
@@ -46,10 +45,40 @@
         <p>
             <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
         </p>
+        <button class="button" onclick="toggleContent()">Show Content</button>
+        <div class="content" id="additionalContent">
+            <h1>Chocolate Peanut D&Ds</h1>
+            <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier(<strong>SOYA</strong> lecithin)) (41%), sugar (34.8%), <strong>PEANUT</strong> (20%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Typical values per 100g Energy: 492 kcal / 2058 kJ Fat: 24.0g of which saturates: 9.7g Carbohydrate: 59.0g of which sugars: 56.0g Fibre: 6.1g Proteins: 7.2g Salt: 0.02g</p>
+            <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
+            <div class="grid">
+                <p>
+                    <strong>Net weight: </strong>
+                    <span>250g</span>
+                    <br>
+                    <strong>Best before: </strong>
+                    <span>10-Mar-25</span>
+                </p>
+                <p>
+                    <strong>Stock item code: </strong>
+                    <span>LO056</span>
+                    <br>
+                    <strong>Batch no: </strong>
+                    <span>ZWR00358-5444</span>
+                </p>
+            </div>
+        </div>
     </main>
+    &copy; 2023 Niamh Blount. All rights reserved.
     
-    <footer>
-        <p style="text-align: center;">&copy; 2023 Niamh Blount. All rights reserved.</p>
-    </footer>
+    <script>
+        function toggleContent() {
+            const content = document.getElementById('additionalContent');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
