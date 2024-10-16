@@ -57,10 +57,13 @@
             const bestBeforeDate = document.getElementById('best-before-date').value;
             const batchNoInput = document.getElementById('batch-no').value;
 
-            // Convert date to DD-MMM-YY format
-            const date = new Date(bestBeforeDate);
-            const options = { day: '2-digit', month: 'short', year: '2-digit' };
-            const formattedDate = date.toLocaleDateString('en-GB', options).replace(',', '');
+            // Convert date to DD-MMM-YY format with dashes
+            const dateParts = bestBeforeDate.split('-'); // Split the input date (YYYY-MM-DD)
+            const day = dateParts[2]; // Get the day
+            const month = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(new Date(bestBeforeDate)); // Get month abbreviation
+            const year = dateParts[0].slice(2); // Get last two digits of the year
+
+            const formattedDate = `${day}-${month}-${year}`; // Combine with dashes
 
             // Open the specific label HTML page
             const labelWindow = window.open(currentProductLink, '_blank');
@@ -72,8 +75,7 @@
 
                 // Update only the last four digits of the batch number
                 const existingBatchNo = labelWindow.document.getElementById('batch-no-display').innerText;
-                const newBatchNo = batchNoInput;
-                const updatedBatchNo = existingBatchNo.slice(0, -4) + newBatchNo; // Keep the existing part and add new digits
+                const updatedBatchNo = existingBatchNo.slice(0, -4) + batchNoInput; // Keep the existing part and add new digits
                 labelWindow.document.getElementById('batch-no-display').innerText = updatedBatchNo || existingBatchNo;
             };
         }
