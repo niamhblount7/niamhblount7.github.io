@@ -93,6 +93,11 @@
             font-size: 0.7rem;  /* Set font size to match the grid */
             margin-left: 5px; /* Space between batch text and input */
         }
+
+        /* Add consistent styling for batch no and best before */
+        .best-before-text, .batch-no-text {
+            font-size: 0.7rem; /* Ensure font size matches the other labels */
+        }
     </style>
 </head>
 <body>
@@ -106,15 +111,15 @@
                     <div class="grid">
                         <p>
                             <strong>Net weight: </strong>
-                            <span>500g</span>
+                            <span class="best-before-text">500g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span id="bestBefore">28-Feb-25</span>
+                            <span class="best-before-text" id="bestBefore">28-Feb-25</span>
                         </p>
 
                         <p>
                             <strong>Stock item code: </strong>
-                            <span>LO038</span>
+                            <span class="batch-no-text">LO038</span>
                             <br>
                             <strong>Batch no: </strong>
                             <span class="batch-text">ZWR00292-</span>
