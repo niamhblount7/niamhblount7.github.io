@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labels</title>
+    <style>
+        /* Font-face definitions here... */
+
+        @media print {
+            @page {
+                size: 100mm 40mm;
+                margin: 0;
+            }
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 0 !important;
+        }
+        
+        .label {
+            width: 100mm;
+            height: 40mm;
+        }
+        
+        .label-bleed {
+            width: 100mm;
+            height: 40mm;
+            padding: 3mm;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .label-contents {
+            width: 95mm;
+            height: 38mm;
+            padding-left: 7mm; /* Adjust padding */
+            padding-top: 5mm;   /* Adjust top padding */
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        h1 {
+            font-family: Stag;
+            font-size: 0.95rem; /* Keep this size for the title */
+            font-weight: normal;
+            margin: 0; /* Remove default margin */
+        }
+        
+        p {
+            font-size: 0.59rem; /* Keep this size for the ingredients */
+            margin: 0; /* Remove default margin */
+            line-height: 1.2; /* Adjust line height for fitting */
+        }
+        
+        strong {
+            font-weight: 500; /* Bold for strong text */
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5mm; /* Space between items in the grid */
+            margin-top: 5mm; /* Moves the entire grid down */
+            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+        }
+        
+        .grid p {
+            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+        }
+    </style>
+</head>
+<body>
+    <div class="label">
+        <div class="label-bleed">
+            <div class="label-contents">
+                <div style="font-family: Stag;">
+                    <h1>Organic Prunes</h1>
+                    <p>Ingredients: Prunes*. (*Organic). Typical values per 100g Energy: 164 kcal / 686 kJ Fat: 0.4g of which saturates: 0.10g Carbohydrate: 34g of which sugars: 34g Proteins: 2.2g Salt: 0.01g</p>
+
+                    <div class="grid">
+                        <p>
+                            <strong>Net weight: </strong>
+                            <span>250g</span>
+                            <br>
+                            <strong>Best before: </strong>
+                            <span>28-Feb-25</span>
+                        </p>
+
+                        <p>
+                            <strong>Stock item code: </strong>
+                            <span>LO050</span>
+                            <br>
+                            <strong>Batch no: </strong>
+                            <span>ZWR00304-5515</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

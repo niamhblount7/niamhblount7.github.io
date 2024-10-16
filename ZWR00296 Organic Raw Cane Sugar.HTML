@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labels</title>
+    <style>
+        @media print {
+            @page {
+                size: 100mm 40mm;
+                margin: 0;
+            }
+        }
+        
+        body {
+            margin: 0;
+            margin-top: 0 !important;
+        }
+        
+        .label {
+            width: 100mm;
+            height: 40mm;
+        }
+        
+        .label-bleed {
+            width: 100mm;
+            height: 40mm;
+            padding: 3mm;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .label-contents {
+            width: 95mm;
+            height: 38mm;
+            padding-left: 7mm; 
+            padding-top: 5mm;   
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        h1 {
+            font-family: Stag;
+            font-size: 0.95rem;
+            font-weight: normal;
+            margin: 0;
+        }
+        
+        p {
+            font-size: 0.59rem; 
+            margin: 0; 
+            line-height: 1.2; 
+        }
+        
+        strong {
+            font-weight: 500; 
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0mm; 
+            margin-top: 5mm; 
+            font-size: 0.7rem; 
+        }
+        
+        .grid p {
+            font-size: 0.7rem; 
+            margin: 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="label">
+        <div class="label-bleed">
+            <div class="label-contents">
+                <div style="font-family: Stag;">
+                    <h1>Organic Raw Cane Sugar</h1>
+                    <p>Ingredients: Raw Cane Sugar*. (*Organic). Typical values per 100g Energy: 399 kcal / 1670 kJ Fat: 0g of which saturates: 0g Carbohydrate: 99.8g of which sugars: 99.8g Proteins: 0g Salt: 0.15g</p>
+
+                    
+
+                    <div class="grid">
+                        <p><strong>Net weight: </strong>500g</p>
+                        <p><strong>Best before: </strong>30-Jun-26</p>
+                        <p><strong>Stock item code: </strong>LO042</p>
+                        <p><strong>Batch no: </strong>ZWR00296-5503</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
