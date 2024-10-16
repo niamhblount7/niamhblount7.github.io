@@ -70,6 +70,12 @@
             align-items: center; /* Center items vertically */
         }
 
+        /* Ensure inline display for specific text */
+        .inline {
+            display: inline-flex; /* Ensure items are inline and can be vertically centered */
+            align-items: center;
+        }
+
         /* Style for editable input fields */
         input[type="text"] {
             font-family: Stag;
@@ -79,6 +85,7 @@
             width: auto;
             padding: 0;
             margin-left: 5px; /* Space between label and input */
+            visibility: visible; /* Make the input visible for editing */
         }
     </style>
 </head>
@@ -96,34 +103,24 @@
                             500g
                         </p>
 
+                        <p class="inline">
+                            <strong>Best before: </strong>
+                            <span>28-Feb-25</span> <!-- Date displayed inline -->
+                        </p>
+
                         <p>
                             <strong>Stock item code: </strong>
                             LO038
                         </p>
 
-                        <p>
-                            <strong>Best before: </strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25">
-                        </p>
-
-                        <p>
+                        <p class="inline">
                             <strong>Batch no: </strong>
-                            <input type="text" class="batch-input" id="batchNo" value="ZWR00292-5475" readonly>
+                            <span>ZWR00292-5475</span> <!-- Batch number displayed inline -->
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('batchNo').addEventListener('focus', function() {
-            this.select();
-        });
-
-        document.getElementById('bestBefore').addEventListener('focus', function() {
-            this.select();
-        });
-    </script>
 </body>
 </html>
