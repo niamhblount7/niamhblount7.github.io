@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions for 'Stag' should go here */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -15,13 +13,12 @@
 
             /* Hide input fields when printing */
             input[type="text"] {
-                display: none; /* Hide the input fields */
+                display: none;
             }
         }
 
         body {
             margin: 0;
-            margin-top: 0 !important;
         }
 
         .label {
@@ -40,60 +37,51 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
 
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
 
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 5mm;
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
 
-        /* Style the editable inputs */
+        .grid p {
+            font-size: 0.7rem;
+            display: flex; /* Use flex to align items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+
         input[type="text"] {
             font-family: Stag;
-            font-size: 0.7rem;  /* Set font size to match the grid */
-            border: 1px solid #ccc; /* Add a light border for visibility */
-            background-color: #fff; /* White background for visibility */
-            color: #000; /* Black text for visibility */
-            padding: 2px; /* Padding for better appearance */
+            font-size: 0.7rem; 
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
             margin-left: 5px; /* Space between label and input */
-            width: auto; /* Adjust width to fit content */
-        }
-
-        /* Style to hide extra part of the batch no and make only the last 4 digits editable */
-        .batch-text {
-            font-family: Stag;
-            font-size: 0.6rem;  /* One font size smaller for ZWR00292- */
-            position: relative; /* Relative positioning */
-            display: inline; /* Keep it inline */
-        }
-
-        .best-before {
-            font-family: Stag;
-            font-size: 0.7rem; /* Same font size as the grid */
         }
     </style>
 </head>
@@ -111,7 +99,7 @@
                             <span>500g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <input type="text" class="best-before-input" id="bestBefore" value="28-Feb-25" onfocus="this.select();">
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p>
@@ -119,8 +107,8 @@
                             <span>LO038</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span class="batch-text">ZWR00292-</span>
-                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4" onfocus="this.select();">
+                            <span>ZWR00292-</span>
+                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4">
                         </p>
                     </div>
                 </div>
@@ -129,13 +117,12 @@
     </div>
 
     <script>
-        // JavaScript code to handle focus and selection for the batch number and best before date.
         document.getElementById('batchNo').addEventListener('focus', function() {
-            this.select(); // Auto-select the last 4 digits for easy editing
+            this.select();
         });
 
         document.getElementById('bestBefore').addEventListener('focus', function() {
-            this.select(); // Auto-select the entire best before date for easy editing
+            this.select();
         });
     </script>
 </body>
