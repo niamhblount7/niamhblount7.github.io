@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niamh Blount's GitHub Page</title>
     <style>
-        /* Add your CSS styles here */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -56,8 +55,12 @@
 
         function updateLabel() {
             const bestBeforeDate = document.getElementById('best-before-date').value;
-            const stockCode = document.getElementById('stock-code').value;
-            const batchNo = document.getElementById('batch-no').value;
+            const batchNoInput = document.getElementById('batch-no').value;
+
+            // Convert date to DD-MMM-YY format
+            const date = new Date(bestBeforeDate);
+            const options = { day: '2-digit', month: 'short', year: '2-digit' };
+            const formattedDate = date.toLocaleDateString('en-GB', options).replace(',', '');
 
             // Open the specific label HTML page
             const labelWindow = window.open(currentProductLink, '_blank');
@@ -65,9 +68,12 @@
             // Wait for the label page to load
             labelWindow.onload = function() {
                 // Update the content of the label page
-                labelWindow.document.getElementById('best-before-display').innerText = bestBeforeDate || labelWindow.document.getElementById('best-before-display').innerText;
-                labelWindow.document.getElementById('stock-code-display').innerText = stockCode || labelWindow.document.getElementById('stock-code-display').innerText;
-                labelWindow.document.getElementById('batch-no-display').innerText = batchNo || labelWindow.document.getElementById('batch-no-display').innerText;
+                labelWindow.document.getElementById('best-before-display').innerText = formattedDate || labelWindow.document.getElementById('best-before-display').innerText;
+
+                // Update only the last four digits of the batch number
+                const existingBatchNo = labelWindow.document.getElementById('batch-no-display').innerText;
+                const updatedBatchNo = existingBatchNo.slice(0, -4) + batchNoInput;
+                labelWindow.document.getElementById('batch-no-display').innerText = updatedBatchNo || existingBatchNo;
             };
         }
     </script>
@@ -92,10 +98,8 @@
             <h2 id="product-header">Update Product Details</h2>
             <label for="best-before-date">Best Before Date:</label>
             <input type="date" id="best-before-date" />
-            <label for="stock-code">Stock Code Number:</label>
-            <input type="text" id="stock-code" />
-            <label for="batch-no">Batch No:</label>
-            <input type="text" id="batch-no" />
+            <label for="batch-no">Batch No (last 4 digits):</label>
+            <input type="text" id="batch-no" maxlength="4" />
             <button class="button" onclick="updateLabel()">Update Label</button>
         </div>
     </main>
