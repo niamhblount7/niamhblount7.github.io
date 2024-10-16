@@ -35,39 +35,50 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 5mm;
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+        }
+        
+        input[type="text"] {
+            font-size: 0.7rem;
+            width: auto;
+            border: 1px solid #ddd;
+            padding: 2px;
+        }
+        
+        input[type="text"]:disabled {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
@@ -85,7 +96,7 @@
                             <span>500g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p>
@@ -93,12 +104,34 @@
                             <span>LO038</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span>ZWR00292-5475</span>
+                            <span>ZWR00292-</span>
+                            <input type="text" id="batchLast4" value="5475" maxlength="4" size="4">
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Restrict the batch number input to only the last 4 digits
+        const batchInput = document.getElementById('batchLast4');
+        batchInput.addEventListener('input', function (e) {
+            const value = e.target.value;
+
+            // Ensure only digits are entered and limit length to 4 characters
+            if (value.length > 4 || !/^\d*$/.test(value)) {
+                e.target.value = value.slice(0, 4).replace(/\D/g, '');
+            }
+        });
+
+        // Optional: you can add save functionality or printing functionality here
+        // For example:
+        function saveEdits() {
+            const bestBeforeValue = document.getElementById('bestBefore').value;
+            const batchLast4Value = document.getElementById('batchLast4').value;
+            alert(`Saved Best before: ${bestBeforeValue}, Batch no: ZWR00292-${batchLast4Value}`);
+        }
+    </script>
 </body>
 </html>
