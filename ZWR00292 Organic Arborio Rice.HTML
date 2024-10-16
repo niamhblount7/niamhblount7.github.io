@@ -59,7 +59,7 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* No gap between grid items */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
@@ -68,24 +68,13 @@
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
             display: flex; /* Use flex for aligning items */
             align-items: center; /* Center items vertically */
+            margin: 0; /* Remove margin to eliminate space */
         }
 
         /* Ensure inline display for specific text */
         .inline {
             display: inline-flex; /* Ensure items are inline and can be vertically centered */
             align-items: center;
-        }
-
-        /* Style for editable input fields */
-        input[type="text"] {
-            font-family: Stag;
-            font-size: 0.7rem;
-            border: none;
-            background-color: transparent;
-            width: auto;
-            padding: 0;
-            margin-left: 5px; /* Space between label and input */
-            visibility: visible; /* Make the input visible for editing */
         }
     </style>
 </head>
@@ -100,22 +89,22 @@
                     <div class="grid">
                         <p>
                             <strong>Net weight: </strong>
-                            500g
+                            <span>500g</span>
                         </p>
 
                         <p class="inline">
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span> <!-- Date displayed inline -->
+                            <span>28-Feb-25</span>
                         </p>
 
-                        <p>
+                        <p class="inline">
                             <strong>Stock item code: </strong>
-                            LO038
+                            <span>LO038</span>
                         </p>
 
                         <p class="inline">
                             <strong>Batch no: </strong>
-                            <span>ZWR00292-5475</span> <!-- Batch number displayed inline -->
+                            <span>ZWR00292-5475</span>
                         </p>
                     </div>
                 </div>
