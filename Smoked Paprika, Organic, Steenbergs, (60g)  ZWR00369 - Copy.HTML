@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labels</title>
+    <title>Smoked Paprika Label</title>
     <style>
+        /* Font definitions */
         @font-face {
             font-family: "Stag Black Italic";
             src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype");
@@ -70,14 +71,31 @@
                             <strong>Batch no: </strong>
                             <span id="batch-no-display">ZWR003ZZ-6666</span><br>
                             <strong>Stock item code: </strong>
-                            <span>LO056</span> <!-- Stock code displayed but not editable -->
+                            <span>LO056</span> <!-- Displayed but not editable -->
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        // JavaScript for updating label info
+        function updateLabel() {
+            const bestBeforeInput = document.getElementById("best-before-input").value;
+            const batchNoInput = document.getElementById("batch-no-input").value;
+
+            // Update best before date format
+            const [day, month, year] = bestBeforeInput.split('/');
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const formattedDate = `${day}-${monthNames[parseInt(month) - 1]}-${year}`;
+
+            document.getElementById("best-before-display").textContent = formattedDate;
+
+            // Update batch number
+            const currentBatchNo = document.getElementById("batch-no-display").textContent;
+            const newBatchNo = currentBatchNo.slice(0, -4) + batchNoInput; // Only replace the last 4 digits
+            document.getElementById("batch-no-display").textContent = newBatchNo;
+        }
+    </script>
 </body>
 </html>
-
-
