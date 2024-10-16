@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
+        /* Font-face definitions for 'Stag' should go here */
+        
         @media print {
             @page {
                 size: 100mm 40mm;
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
@@ -31,33 +30,34 @@
             padding-top: 0;
             padding-bottom: 0;
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm;
+            padding-left: 7mm; 
             padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
+            font-family: Stag;
         }
-        
+
         h1 {
             font-family: Stag;
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
         }
-        
+
         p {
             font-size: 0.59rem;
             margin: 0;
             line-height: 1.2;
         }
-        
+
         strong {
             font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -65,20 +65,30 @@
             margin-top: 5mm;
             font-size: 0.7rem;
         }
-        
-        .grid p {
-            font-size: 0.7rem;
-        }
-        
+
+        /* Style the editable inputs */
         input[type="text"] {
+            font-family: Stag;
             font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
             width: auto;
-            border: 1px solid #ddd;
-            padding: 2px;
+            padding: 0;
+            margin: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
         
-        input[type="text"]:disabled {
-            background-color: #f9f9f9;
+        /* Style to hide extra part of the batch no and make only the last 4 digits editable */
+        .batch-text {
+            font-family: Stag;
+        }
+        
+        .batch-input {
+            display: inline-block;
+            width: 35px; /* Adjust width as per the required space for 4 digits */
         }
     </style>
 </head>
@@ -104,8 +114,8 @@
                             <span>LO038</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span>ZWR00292-</span>
-                            <input type="text" id="batchLast4" value="5475" maxlength="4" size="4">
+                            <span class="batch-text">ZWR00292-</span>
+                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4">
                         </p>
                     </div>
                 </div>
@@ -114,24 +124,14 @@
     </div>
 
     <script>
-        // Restrict the batch number input to only the last 4 digits
-        const batchInput = document.getElementById('batchLast4');
-        batchInput.addEventListener('input', function (e) {
-            const value = e.target.value;
-
-            // Ensure only digits are entered and limit length to 4 characters
-            if (value.length > 4 || !/^\d*$/.test(value)) {
-                e.target.value = value.slice(0, 4).replace(/\D/g, '');
-            }
+        // JavaScript code to handle focus and selection for the batch number and best before date.
+        document.getElementById('batchNo').addEventListener('focus', function() {
+            this.select(); // Auto-select the last 4 digits for easy editing
         });
 
-        // Optional: you can add save functionality or printing functionality here
-        // For example:
-        function saveEdits() {
-            const bestBeforeValue = document.getElementById('bestBefore').value;
-            const batchLast4Value = document.getElementById('batchLast4').value;
-            alert(`Saved Best before: ${bestBeforeValue}, Batch no: ZWR00292-${batchLast4Value}`);
-        }
+        document.getElementById('bestBefore').addEventListener('focus', function() {
+            this.select(); // Auto-select the entire best before date for easy editing
+        });
     </script>
 </body>
 </html>
