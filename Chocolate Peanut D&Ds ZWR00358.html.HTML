@@ -3,50 +3,79 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labels</title>
+    <title>Chocolate Peanut D&Ds Label</title>
     <style>
         body {
             margin: 0;
-            margin-top: 0 !important;
         }
-        
         .label {
             width: 100mm;
             height: 40mm;
+            border: 1px solid #000;
         }
-
-        /* Additional styles */
+        .label-bleed {
+            padding: 3mm;
+        }
+        .label-contents {
+            padding-left: 10mm;
+            padding-top: 5mm;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 0.95rem;
+            font-weight: normal;
+            margin: 0;
+        }
+        p {
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
     </style>
 </head>
 <body>
     <div class="label">
         <div class="label-bleed">
             <div class="label-contents">
-                <div style="font-family: Stag;">
-                    <div class="text-[0.55rem] leading-snug"> 
-                        <h1>Chocolate Peanut D&Ds</h1>
-                        <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier(SOYA lecithin)) (41%), sugar (34.8%), PEANUT (PEANUT, sunflower oil) (20%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup.. Typical values per 100g Energy: 492 kcal / 2058 kJ Fat: 24.0g of which saturates: 9.7g Carbohydrate: 59.0g of which sugars: 56.0g Fibre: 6.1g Proteins: 7.2g Salt: 0.02g </p>
-
-                        <p>For allergens please see ingredients in bold. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
-
-                        <div class="grid">
-                            <p>
-                                <span>Net weight: </span>
-                                <span>250g</span>
-                                <br>
-                                <span>Best before: </span>
-                                <span id="best-before-display">10-Mar-25</span> <!-- Dynamic display -->
-                            </p>
-
-                            <p>
-                                <span>Batch no: </span>
-                                <span id="batch-no-display">ZWR00358-5444</span> <!-- Dynamic display -->
-                            </p>
-                        </div>
-                    </div>
+                <h1>Chocolate Peanut D&Ds</h1>
+                <p>Ingredients: Dark chocolate, sugar, cocoa mass, cocoa butter, emulsifier (SOYA lecithin), peanuts, etc.</p>
+                <div class="grid">
+                    <p>
+                        <strong>Net weight:</strong> <span>250g</span><br>
+                        <strong>Best before:</strong> <span id="best-before-display">10-Mar-25</span>
+                    </p>
+                    <p>
+                        <strong>Batch no:</strong> <span id="batch-no-display">ZWR00358-5444</span><br>
+                        <strong>Stock item code:</strong> <span>LO056</span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function updateLabel() {
+            const bestBeforeInput = prompt("Enter Best Before Date (DD/MM/YY):");
+            const batchNoInput = prompt("Enter last 4 digits of Batch No:");
+
+            if (bestBeforeInput) {
+                const [day, month, year] = bestBeforeInput.split('/');
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const formattedDate = `${day}-${monthNames[parseInt(month) - 1]}-${year}`;
+                document.getElementById("best-before-display").textContent = formattedDate;
+            }
+
+            if (batchNoInput && batchNoInput.length === 4) {
+                const currentBatchNo = document.getElementById("batch-no-display").textContent;
+                const newBatchNo = currentBatchNo.slice(0, -4) + batchNoInput;
+                document.getElementById("batch-no-display").textContent = newBatchNo;
+            } else {
+                alert("Please enter exactly 4 digits for the batch number.");
+            }
+        }
+    </script>
 </body>
 </html>
