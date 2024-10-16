@@ -76,6 +76,21 @@
             display: inline-flex; /* Ensure items are inline and can be vertically centered */
             align-items: center;
         }
+
+        /* Style the editable inputs */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem; /* Match font size */
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+            margin: 0 0 0 5px; /* Slight left margin for spacing */
+        }
+
+        input[type="text"]:focus {
+            outline: none; /* Remove outline on focus */
+        }
     </style>
 </head>
 <body>
@@ -94,7 +109,7 @@
 
                         <p class="inline">
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p class="inline">
@@ -104,7 +119,7 @@
 
                         <p class="inline">
                             <strong>Batch no: </strong>
-                            <span>ZWR00292-5475</span>
+                            <input type="text" id="batchNo" value="ZWR00292-5475">
                         </p>
                     </div>
                 </div>
