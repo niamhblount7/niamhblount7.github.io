@@ -61,11 +61,22 @@
         }
     </style>
     <script>
-        function showForm(productName) {
+        let currentProductLink = '';
+
+        function showForm(productName, productLink) {
             const formContainer = document.getElementById('form-container');
             const productHeader = document.getElementById('product-header');
             productHeader.innerText = `Update details for ${productName}`;
             formContainer.style.display = 'block';
+            currentProductLink = productLink; // Store the link for the product
+        }
+
+        function generateLabel() {
+            if (currentProductLink) {
+                window.location.href = currentProductLink; // Redirect to the product link
+            } else {
+                alert('No product selected!');
+            }
         }
     </script>
 </head>
@@ -81,9 +92,9 @@
         <p>
             <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
         </p>
-        <button class="button" onclick="showForm('Chocolate Peanut D&Ds ZWR00358')">Chocolate Peanut D&Ds ZWR00358</button>
-        <button class="button" onclick="showForm('Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369')">Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369</button>
-        <button class="button" onclick="showForm('Organic Arborio Rice')">Organic Arborio Rice</button>
+        <button class="button" onclick="showForm('Chocolate Peanut D&Ds ZWR00358', 'Chocolate%20Peanut%20D%26Ds%20ZWR00358.html.HTML')">Chocolate Peanut D&Ds ZWR00358</button>
+        <button class="button" onclick="showForm('Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369', 'Smoked%20Paprika%2C%20Organic%2C%20Steenbergs%2C%20(60g)%20%20ZWR00369%20-%20Copy.HTML')">Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369</button>
+        <button class="button" onclick="showForm('Organic Arborio Rice', 'Organic%20Arborio%20Rice.html.html')">Organic Arborio Rice</button>
         
         <div id="form-container" class="form-container">
             <h2 id="product-header">Update Product Details</h2>
@@ -94,8 +105,8 @@
             <label for="batch-no">Batch No:</label>
             <input type="text" id="batch-no" />
             <button class="button" onclick="alert('Details updated!')">Update</button>
+            <button class="button" onclick="generateLabel()">Generate Label</button>
         </div>
     </main>
 </body>
 </html>
-
