@@ -5,82 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Niamh Blount's GitHub Page</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 1.5rem;
-            margin: 0;
-        }
-
-        p {
-            font-size: 1rem;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 10px;
-            display: inline-block;
-        }
-
-        .form-container {
-            display: none; /* Hidden by default */
-            margin-top: 20px;
-        }
+        @font-face { font-family: "Stag Black Italic"; src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype"); }
+        @font-face { font-family: "Stag Black"; src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black.ttf") format("truetype"); }
+        body { margin: 0; font-family: Arial, sans-serif; }
+        main { padding: 20px; }
+        h1 { font-family: Stag Black; font-size: 1.5rem; margin: 0; }
+        p { font-size: 1rem; margin: 0; line-height: 1.5; }
+        .button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-left: 10px; display: inline-block; }
     </style>
-    <script>
-        let currentProductLink = '';
-
-        function showForm(productName, productLink) {
-            const formContainer = document.getElementById('form-container');
-            const productHeader = document.getElementById('product-header');
-            productHeader.innerText = `Update details for ${productName}`;
-            formContainer.style.display = 'block';
-            currentProductLink = productLink; // Store the link for the product
-        }
-
-        function updateLabel() {
-            const bestBeforeDate = document.getElementById('best-before-date').value;
-            const batchNoInput = document.getElementById('batch-no').value;
-
-            // Convert date to DD-MMM-YY format with dashes
-            const dateParts = bestBeforeDate.split('-'); // Split the input date (YYYY-MM-DD)
-            const day = dateParts[2]; // Get the day
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const month = monthNames[parseInt(dateParts[1], 10) - 1]; // Get month abbreviation
-            const year = dateParts[0].slice(2); // Get last two digits of the year
-
-            const formattedDate = `${day}-${month}-${year}`; // Combine with dashes
-
-            // Open the specific label HTML page
-            const labelWindow = window.open(currentProductLink, '_blank');
-
-            // Wait for the label page to load
-            labelWindow.onload = function() {
-                // Update the content of the label page
-                labelWindow.document.getElementById('best-before-display').innerText = formattedDate || labelWindow.document.getElementById('best-before-display').innerText;
-
-                // Update only the last four digits of the batch number
-                const existingBatchNo = labelWindow.document.getElementById('batch-no-display').innerText;
-                const updatedBatchNo = existingBatchNo.slice(0, -4) + batchNoInput; // Keep the existing part and add new digits
-                labelWindow.document.getElementById('batch-no-display').innerText = updatedBatchNo || existingBatchNo;
-            };
-        }
-    </script>
 </head>
 <body>
     <main>
@@ -94,18 +26,15 @@
         <p>
             <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
         </p>
-        <button class="button" onclick="showForm('Chocolate Peanut D&Ds ZWR00358', 'Chocolate%20Peanut%20D%26Ds%20ZWR00358.html.HTML')">Chocolate Peanut D&Ds ZWR00358</button>
-        <button class="button" onclick="showForm('Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369', 'Smoked%20Paprika%2C%20Organic%2C%20Steenbergs%2C%20(60g)%20%20ZWR00369%20-%20Copy.HTML')">Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369</button>
-        <button class="button" onclick="showForm('Organic Arborio Rice', 'Organic%20Arborio%20Rice.html.html')">Organic Arborio Rice</button>
-        
-        <div id="form-container" class="form-container">
-            <h2 id="product-header">Update Product Details</h2>
-            <label for="best-before-date">Best Before Date:</label>
-            <input type="date" id="best-before-date" />
-            <label for="batch-no">Batch No (last 4 digits):</label>
-            <input type="text" id="batch-no" maxlength="4" />
-            <button class="button" onclick="updateLabel()">Update Label</button>
-        </div>
+        <button class="button" onclick="openLabel('Chocolate%20Peanut%20D%26Ds%20ZWR00358.html.HTML')">Chocolate Peanut D&Ds ZWR00358</button>
+        <button class="button" onclick="openLabel('Smoked%20Paprika%2C%20Organic%2C%20Steenbergs%2C%20(60g)%20%20ZWR00369%20-%20Copy.HTML')">Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369</button>
     </main>
+
+    <script>
+        function openLabel(labelFile) {
+            // Open the selected label page
+            window.open(labelFile, '_self');
+        }
+    </script>
 </body>
 </html>
