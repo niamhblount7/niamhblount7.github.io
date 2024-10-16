@@ -72,11 +72,18 @@
         }
 
         function generateLabel() {
-            if (currentProductLink) {
-                window.location.href = currentProductLink; // Redirect to the product link
-            } else {
-                alert('No product selected!');
-            }
+            const bestBeforeDate = document.getElementById('best-before-date').value;
+            const stockCode = document.getElementById('stock-code').value;
+            const batchNo = document.getElementById('batch-no').value;
+
+            // Store the details in localStorage
+            localStorage.setItem('bestBeforeDate', bestBeforeDate);
+            localStorage.setItem('stockCode', stockCode);
+            localStorage.setItem('batchNo', batchNo);
+            localStorage.setItem('currentProductLink', currentProductLink);
+
+            // Redirect to the label page
+            window.location.href = 'label.html'; // Change to your actual label page
         }
     </script>
 </head>
@@ -110,3 +117,4 @@
     </main>
 </body>
 </html>
+
