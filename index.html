@@ -72,7 +72,8 @@
 
                 // Update only the last four digits of the batch number
                 const existingBatchNo = labelWindow.document.getElementById('batch-no-display').innerText;
-                const updatedBatchNo = existingBatchNo.slice(0, -4) + batchNoInput;
+                const newBatchNo = batchNoInput;
+                const updatedBatchNo = existingBatchNo.slice(0, -4) + newBatchNo; // Keep the existing part and add new digits
                 labelWindow.document.getElementById('batch-no-display').innerText = updatedBatchNo || existingBatchNo;
             };
         }
