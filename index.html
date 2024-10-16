@@ -60,7 +60,8 @@
             // Convert date to DD-MMM-YY format with dashes
             const dateParts = bestBeforeDate.split('-'); // Split the input date (YYYY-MM-DD)
             const day = dateParts[2]; // Get the day
-            const month = new Intl.DateTimeFormat('en-GB', { month: 'short' }).format(new Date(bestBeforeDate)); // Get month abbreviation
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const month = monthNames[parseInt(dateParts[1], 10) - 1]; // Get month abbreviation
             const year = dateParts[0].slice(2); // Get last two digits of the year
 
             const formattedDate = `${day}-${month}-${year}`; // Combine with dashes
