@@ -6,7 +6,7 @@
     <title>Labels</title>
     <style>
         /* Font-face definitions for 'Stag' should go here */
-        
+
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -16,6 +16,7 @@
 
         body {
             margin: 0;
+            margin-top: 0 !important;
         }
 
         .label {
@@ -34,36 +35,35 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; 
-            padding-top: 5mm;
+            padding-left: 7mm; /* Adjust padding */
+            padding-top: 5mm;   /* Adjust top padding */
             overflow: hidden;
             page-break-inside: avoid;
-            font-family: Stag;
         }
 
         h1 {
             font-family: Stag;
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Keep this size for the title */
             font-weight: normal;
-            margin: 0;
+            margin: 0; /* Remove default margin */
         }
 
         p {
-            font-size: 0.59rem;
-            margin: 0;
-            line-height: 1.2;
+            font-size: 0.59rem; /* Keep this size for the ingredients */
+            margin: 0; /* Remove default margin */
+            line-height: 1.2; /* Adjust line height for fitting */
         }
 
         strong {
-            font-weight: 500;
+            font-weight: 500; /* Bold for strong text */
         }
 
         .grid {
-            display: flex; /* Use flexbox for alignment */
-            justify-content: space-between; /* Ensure space between items */
-            align-items: center; /* Vertically align items */
-            margin-top: 5mm;
-            font-size: 0.7rem;  /* Set font size for the grid */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5mm; /* Space between items in the grid */
+            margin-top: 5mm; /* Moves the entire grid down */
+            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
 
         /* Style the editable inputs */
@@ -72,25 +72,26 @@
             font-size: 0.7rem;  /* Set font size to match the grid */
             border: none;
             background-color: transparent;
-            width: auto;
             padding: 0;
             margin-left: 5px; /* Space between label and input */
+            width: auto; /* Adjust width to fit content */
         }
 
         input[type="text"]:focus {
             outline: none;
         }
-        
+
         /* Style to hide extra part of the batch no and make only the last 4 digits editable */
         .batch-text {
             font-family: Stag;
             font-size: 0.7rem;  /* Set font size to match the grid */
         }
-        
+
         .batch-input {
             display: inline-block;
             width: 35px; /* Width for the last 4 digits */
             font-size: 0.7rem;  /* Set font size to match the grid */
+            margin-left: 5px; /* Space between batch text and input */
         }
     </style>
 </head>
@@ -104,22 +105,18 @@
 
                     <div class="grid">
                         <p>
-                            <strong>Net weight:</strong>
+                            <strong>Net weight: </strong>
                             <span>500g</span>
+                            <br>
+                            <strong>Best before: </strong>
+                            <span id="bestBefore">28-Feb-25</span>
                         </p>
+
                         <p>
-                            <strong>Stock item code:</strong>
+                            <strong>Stock item code: </strong>
                             <span>LO038</span>
-                        </p>
-                    </div>
-                    
-                    <div class="grid">
-                        <p>
-                            <strong>Best before:</strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25">
-                        </p>
-                        <p>
-                            <strong>Batch no:</strong>
+                            <br>
+                            <strong>Batch no: </strong>
                             <span class="batch-text">ZWR00292-</span>
                             <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4">
                         </p>
@@ -133,10 +130,6 @@
         // JavaScript code to handle focus and selection for the batch number and best before date.
         document.getElementById('batchNo').addEventListener('focus', function() {
             this.select(); // Auto-select the last 4 digits for easy editing
-        });
-
-        document.getElementById('bestBefore').addEventListener('focus', function() {
-            this.select(); // Auto-select the entire best before date for easy editing
         });
     </script>
 </body>
