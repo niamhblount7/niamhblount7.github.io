@@ -70,21 +70,23 @@
         input[type="text"] {
             font-family: Stag;
             font-size: 0.7rem;  /* Set font size to match the grid */
-            border: none;
-            background-color: transparent;
+            border: none; /* No border */
+            background-color: transparent; /* Transparent background */
+            color: inherit; /* Use the font color of the surrounding text */
             padding: 0;
             margin-left: 5px; /* Space between label and input */
             width: auto; /* Adjust width to fit content */
+            visibility: hidden; /* Make input invisible */
         }
 
         input[type="text"]:focus {
-            outline: none;
+            outline: none; /* Remove focus outline */
         }
 
         /* Style to hide extra part of the batch no and make only the last 4 digits editable */
         .batch-text {
             font-family: Stag;
-            font-size: 0.7rem;  /* Set font size to match the grid */
+            font-size: 0.6rem;  /* One font size smaller for ZWR00292- */
         }
 
         .batch-input {
@@ -92,6 +94,23 @@
             width: 35px; /* Width for the last 4 digits */
             font-size: 0.7rem;  /* Set font size to match the grid */
             margin-left: 5px; /* Space between batch text and input */
+            visibility: hidden; /* Make input invisible */
+        }
+
+        .best-before {
+            font-family: Stag;
+            font-size: 0.7rem; /* Same font size as the grid */
+        }
+
+        .best-before-input {
+            font-family: Stag;
+            font-size: 0.7rem; /* Same font size as the grid */
+            border: none; /* No border */
+            background-color: transparent; /* Transparent background */
+            color: inherit; /* Use the font color of the surrounding text */
+            margin-left: 5px; /* Space between label and input */
+            padding: 0;
+            visibility: hidden; /* Make input invisible */
         }
     </style>
 </head>
@@ -109,7 +128,7 @@
                             <span>500g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span id="bestBefore">28-Feb-25</span>
+                            <input type="text" class="best-before-input" id="bestBefore" value="28-Feb-25" onfocus="this.style.visibility='visible';" onblur="this.style.visibility='hidden';">
                         </p>
 
                         <p>
@@ -118,7 +137,7 @@
                             <br>
                             <strong>Batch no: </strong>
                             <span class="batch-text">ZWR00292-</span>
-                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4">
+                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4" onfocus="this.style.visibility='visible';" onblur="this.style.visibility='hidden';">
                         </p>
                     </div>
                 </div>
@@ -130,6 +149,10 @@
         // JavaScript code to handle focus and selection for the batch number and best before date.
         document.getElementById('batchNo').addEventListener('focus', function() {
             this.select(); // Auto-select the last 4 digits for easy editing
+        });
+
+        document.getElementById('bestBefore').addEventListener('focus', function() {
+            this.select(); // Auto-select the entire best before date for easy editing
         });
     </script>
 </body>
