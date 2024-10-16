@@ -3,34 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Peanut D&Ds Label</title>
+    <title>Chocolate Peanut D&Ds</title>
     <style>
+        @font-face {
+            font-family: "Stag Black Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype");
+        }
+
         body {
             margin: 0;
         }
+
         .label {
             width: 100mm;
             height: 40mm;
             border: 1px solid #000;
         }
+
         .label-bleed {
             padding: 3mm;
         }
+
         .label-contents {
             padding-left: 10mm;
             padding-top: 5mm;
-            overflow: hidden;
         }
+
         h1 {
+            font-family: Stag;
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
         }
+
         p {
             font-size: 0.59rem;
             margin: 0;
             line-height: 1.2;
         }
+
+        strong {
+            font-weight: normal;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
