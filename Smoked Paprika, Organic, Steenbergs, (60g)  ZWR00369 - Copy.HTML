@@ -3,74 +3,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369 - Copy</title>
+    <title>Labels</title>
     <style>
         @font-face {
             font-family: "Stag Black Italic";
             src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype");
-            font-weight: normal;
-            font-style: italic;
         }
-
         @font-face {
             font-family: "Stag Black";
             src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black.ttf") format("truetype");
-            font-weight: normal;
-            font-style: normal;
         }
-
-        @media print {
-            @page {
-                size: 100mm 40mm;
-                margin: 0;
-            }
-        }
-        
         body {
             margin: 0;
-            margin-top: 0 !important;
         }
-        
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
         .label-bleed {
             width: 100mm;
             height: 40mm;
             padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
         }
-        
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 10mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust padding */
+            padding-left: 10mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Adjust font size */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
-        
         p {
-            font-size: 0.59rem; /* Adjust font size */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
-        
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            font-size: 0.5rem; /* Adjust font size */
-            line-height: 1; /* Adjust line height */
+            font-size: 0.5rem;
+            line-height: 1;
         }
     </style>
 </head>
@@ -81,43 +59,25 @@
                 <div style="font-family: Stag;">
                     <h1>Smoked Paprika, Organic, Steenbergs, (60g)</h1>
                     <p>Ingredients: Organic Paprika, smoked</p>
-
                     <div class="grid">
                         <p>
                             <strong>Net weight: </strong>
-                            <span>60g</span>
-                            <br>
+                            <span>60g</span><br>
                             <strong>Best before: </strong>
                             <span id="best-before-display">11-Nov-99</span>
                         </p>
-
                         <p>
                             <strong>Batch no: </strong>
-                            <span id="batch-no-display">ZWR003ZZ-6666</span>
+                            <span id="batch-no-display">ZWR003ZZ-6666</span><br>
+                            <strong>Stock item code: </strong>
+                            <span>LO056</span> <!-- Stock code displayed but not editable -->
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // Example functions to update the label information
-        function updateLabel(bestBefore, batchNo) {
-            // Format the date to include dashes
-            const [day, month, year] = bestBefore.split('/');
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const formattedDate = `${day}-${monthNames[parseInt(month) - 1]}-${year}`;
-            document.getElementById('best-before-display').innerText = formattedDate;
-
-            // Update the batch number (only the last 4 digits)
-            const newBatchNo = batchNo.slice(0, -4) + '-' + batchNo.slice(-4);
-            document.getElementById('batch-no-display').innerText = newBatchNo;
-        }
-
-        // Call the function with sample data for testing
-        updateLabel("28/02/25", "ZWR003ZZ-9999");
-    </script>
 </body>
 </html>
+
 
