@@ -77,16 +77,22 @@
             margin-left: 5px; /* Space between label and input */
             width: auto; /* Adjust width to fit content */
             visibility: hidden; /* Make input invisible */
+            position: absolute; /* Positioning to hide the input behind text */
+            z-index: -1; /* Push it behind other elements */
         }
 
         input[type="text"]:focus {
             outline: none; /* Remove focus outline */
+            visibility: visible; /* Make input visible on focus */
+            z-index: 1; /* Bring the input above other elements */
         }
 
         /* Style to hide extra part of the batch no and make only the last 4 digits editable */
         .batch-text {
             font-family: Stag;
             font-size: 0.6rem;  /* One font size smaller for ZWR00292- */
+            position: relative; /* Relative positioning */
+            display: inline; /* Keep it inline */
         }
 
         .batch-input {
@@ -95,6 +101,8 @@
             font-size: 0.7rem;  /* Set font size to match the grid */
             margin-left: 5px; /* Space between batch text and input */
             visibility: hidden; /* Make input invisible */
+            position: absolute; /* Positioning to hide the input behind text */
+            z-index: -1; /* Push it behind other elements */
         }
 
         .best-before {
@@ -111,6 +119,18 @@
             margin-left: 5px; /* Space between label and input */
             padding: 0;
             visibility: hidden; /* Make input invisible */
+            position: absolute; /* Positioning to hide the input behind text */
+            z-index: -1; /* Push it behind other elements */
+        }
+
+        .best-before-input:focus {
+            visibility: visible; /* Make input visible on focus */
+            z-index: 1; /* Bring the input above other elements */
+        }
+
+        .batch-input:focus {
+            visibility: visible; /* Make input visible on focus */
+            z-index: 1; /* Bring the input above other elements */
         }
     </style>
 </head>
