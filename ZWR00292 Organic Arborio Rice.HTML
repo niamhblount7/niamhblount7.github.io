@@ -12,6 +12,11 @@
                 size: 100mm 40mm;
                 margin: 0;
             }
+
+            /* Hide input fields when printing */
+            input[type="text"] {
+                display: none; /* Hide the input fields */
+            }
         }
 
         body {
@@ -70,21 +75,12 @@
         input[type="text"] {
             font-family: Stag;
             font-size: 0.7rem;  /* Set font size to match the grid */
-            border: none; /* No border */
-            background-color: transparent; /* Transparent background */
-            color: inherit; /* Use the font color of the surrounding text */
-            padding: 0;
+            border: 1px solid #ccc; /* Add a light border for visibility */
+            background-color: #fff; /* White background for visibility */
+            color: #000; /* Black text for visibility */
+            padding: 2px; /* Padding for better appearance */
             margin-left: 5px; /* Space between label and input */
             width: auto; /* Adjust width to fit content */
-            visibility: hidden; /* Make input invisible */
-            position: absolute; /* Positioning to hide the input behind text */
-            z-index: -1; /* Push it behind other elements */
-        }
-
-        input[type="text"]:focus {
-            outline: none; /* Remove focus outline */
-            visibility: visible; /* Make input visible on focus */
-            z-index: 1; /* Bring the input above other elements */
         }
 
         /* Style to hide extra part of the batch no and make only the last 4 digits editable */
@@ -95,42 +91,9 @@
             display: inline; /* Keep it inline */
         }
 
-        .batch-input {
-            display: inline-block;
-            width: 35px; /* Width for the last 4 digits */
-            font-size: 0.7rem;  /* Set font size to match the grid */
-            margin-left: 5px; /* Space between batch text and input */
-            visibility: hidden; /* Make input invisible */
-            position: absolute; /* Positioning to hide the input behind text */
-            z-index: -1; /* Push it behind other elements */
-        }
-
         .best-before {
             font-family: Stag;
             font-size: 0.7rem; /* Same font size as the grid */
-        }
-
-        .best-before-input {
-            font-family: Stag;
-            font-size: 0.7rem; /* Same font size as the grid */
-            border: none; /* No border */
-            background-color: transparent; /* Transparent background */
-            color: inherit; /* Use the font color of the surrounding text */
-            margin-left: 5px; /* Space between label and input */
-            padding: 0;
-            visibility: hidden; /* Make input invisible */
-            position: absolute; /* Positioning to hide the input behind text */
-            z-index: -1; /* Push it behind other elements */
-        }
-
-        .best-before-input:focus {
-            visibility: visible; /* Make input visible on focus */
-            z-index: 1; /* Bring the input above other elements */
-        }
-
-        .batch-input:focus {
-            visibility: visible; /* Make input visible on focus */
-            z-index: 1; /* Bring the input above other elements */
         }
     </style>
 </head>
@@ -148,7 +111,7 @@
                             <span>500g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <input type="text" class="best-before-input" id="bestBefore" value="28-Feb-25" onfocus="this.style.visibility='visible';" onblur="this.style.visibility='hidden';">
+                            <input type="text" class="best-before-input" id="bestBefore" value="28-Feb-25" onfocus="this.select();">
                         </p>
 
                         <p>
@@ -157,7 +120,7 @@
                             <br>
                             <strong>Batch no: </strong>
                             <span class="batch-text">ZWR00292-</span>
-                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4" onfocus="this.style.visibility='visible';" onblur="this.style.visibility='hidden';">
+                            <input type="text" class="batch-input" id="batchNo" value="5475" maxlength="4" onfocus="this.select();">
                         </p>
                     </div>
                 </div>
