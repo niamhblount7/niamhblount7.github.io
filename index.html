@@ -44,7 +44,30 @@
             margin-left: 10px; /* Space between buttons */
             display: inline-block;
         }
+
+        .form-container {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-container input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: calc(100% - 16px);
+        }
     </style>
+    <script>
+        function showForm(productName) {
+            const formContainer = document.getElementById('form-container');
+            const productHeader = document.getElementById('product-header');
+            productHeader.innerText = `Update details for ${productName}`;
+            formContainer.style.display = 'block';
+        }
+    </script>
 </head>
 <body>
     <main>
@@ -53,14 +76,26 @@
         <p>Feel free to explore my projects and repositories!</p>
         <p>
             <a href="https://github.com/niamhblount7" target="_blank">Visit my GitHub profile</a>
-            <button class="button" onclick="location.href='CaseLabels.html'">Case Labels</button> <!-- Button linking to Case Labels page -->
+            <button class="button" onclick="location.href='CaseLabels.html'">Case Labels</button>
         </p>
         <p>
             <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
         </p>
-        <button class="button" onclick="location.href='Chocolate%20Peanut%20D%26Ds%20ZWR00358.html.HTML'">Chocolate Peanut D&Ds ZWR00358</button>
-        <button class="button" onclick="location.href='Smoked%20Paprika%2C%20Organic%2C%20Steenbergs%2C%20(60g)%20%20ZWR00369%20-%20Copy.HTML'">Smoked Paprika, Organic, Steenbergs, (60g)  ZWR00369</button>
-        <button class="button" onclick="location.href='Organic%20Arborio%20Rice.html.html'">Organic Arborio Rice</button>
+        <button class="button" onclick="showForm('Chocolate Peanut D&Ds ZWR00358')">Chocolate Peanut D&Ds ZWR00358</button>
+        <button class="button" onclick="showForm('Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369')">Smoked Paprika, Organic, Steenbergs, (60g) ZWR00369</button>
+        <button class="button" onclick="showForm('Organic Arborio Rice')">Organic Arborio Rice</button>
+        
+        <div id="form-container" class="form-container">
+            <h2 id="product-header">Update Product Details</h2>
+            <label for="best-before-date">Best Before Date:</label>
+            <input type="date" id="best-before-date" />
+            <label for="stock-code">Stock Code Number:</label>
+            <input type="text" id="stock-code" />
+            <label for="batch-no">Batch No:</label>
+            <input type="text" id="batch-no" />
+            <button class="button" onclick="alert('Details updated!')">Update</button>
+        </div>
     </main>
 </body>
 </html>
+
