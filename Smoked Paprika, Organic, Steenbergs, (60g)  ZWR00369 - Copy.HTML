@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Peanut D&Ds Label</title>
+    <title>Smoked Paprika Label</title>
     <style>
         body {
             margin: 0;
@@ -11,22 +11,17 @@
         .label {
             width: 100mm;
             height: 40mm;
+            border: 1px solid #000;
         }
         .label-bleed {
-            width: 100mm;
-            height: 40mm;
             padding: 3mm;
         }
         .label-contents {
-            width: 95mm;
-            height: 38mm;
             padding-left: 10mm;
             padding-top: 5mm;
             overflow: hidden;
-            page-break-inside: avoid;
         }
         h1 {
-            font-family: Stag;
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
@@ -39,8 +34,6 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            font-size: 0.5rem;
-            line-height: 1;
         }
     </style>
 </head>
@@ -48,46 +41,41 @@
     <div class="label">
         <div class="label-bleed">
             <div class="label-contents">
-                <div style="font-family: Stag;">
-                    <h1>Chocolate Peanut D&Ds</h1>
-                    <p>Ingredients: Dark chocolate, sugar, cocoa mass, cocoa butter, emulsifier (SOYA lecithin), peanuts, etc.</p>
-                    <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>250g</span><br>
-                            <strong>Best before: </strong>
-                            <span id="best-before-display">10-Mar-25</span>
-                        </p>
-                        <p>
-                            <strong>Batch no: </strong>
-                            <span id="batch-no-display">ZWR00358-5444</span><br>
-                            <strong>Stock item code: </strong>
-                            <span>LO056</span> <!-- Displayed but not editable -->
-                        </p>
-                    </div>
+                <h1>Smoked Paprika, Organic, Steenbergs, (60g)</h1>
+                <p>Ingredients: Organic Paprika, smoked</p>
+                <div class="grid">
+                    <p>
+                        <strong>Net weight:</strong> <span>60g</span><br>
+                        <strong>Best before:</strong> <span id="best-before-display">11-Nov-99</span>
+                    </p>
+                    <p>
+                        <strong>Batch no:</strong> <span id="batch-no-display">ZWR003ZZ-6666</span><br>
+                        <strong>Stock item code:</strong> <span>LO056</span>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
     <script>
         function updateLabel() {
-            const bestBeforeInput = document.getElementById("best-before-input").value;
-            const batchNoInput = document.getElementById("batch-no-input").value;
+            const bestBeforeInput = prompt("Enter Best Before Date (DD/MM/YY):");
+            const batchNoInput = prompt("Enter last 4 digits of Batch No:");
 
-            // Update best before date format
-            const [day, month, year] = bestBeforeInput.split('/');
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const formattedDate = `${day}-${monthNames[parseInt(month) - 1]}-${year}`;
+            if (bestBeforeInput) {
+                const [day, month, year] = bestBeforeInput.split('/');
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const formattedDate = `${day}-${monthNames[parseInt(month) - 1]}-${year}`;
+                document.getElementById("best-before-display").textContent = formattedDate;
+            }
 
-            document.getElementById("best-before-display").textContent = formattedDate;
-
-            // Update batch number (only last 4 digits)
-            const currentBatchNo = document.getElementById("batch-no-display").textContent;
-            const newBatchNo = currentBatchNo.slice(0, -4) + batchNoInput;
-            document.getElementById("batch-no-display").textContent = newBatchNo;
+            if (batchNoInput && batchNoInput.length === 4) {
+                const currentBatchNo = document.getElementById("batch-no-display").textContent;
+                const newBatchNo = currentBatchNo.slice(0, -4) + batchNoInput;
+                document.getElementById("batch-no-display").textContent = newBatchNo;
+            } else {
+                alert("Please enter exactly 4 digits for the batch number.");
+            }
         }
     </script>
 </body>
 </html>
-
-
