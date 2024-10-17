@@ -61,13 +61,16 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
+            gap: 0; /* Remove gap between items in the grid */
+            margin-top: 2mm; /* Reduce the space above the grid */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
+            margin: 0; /* Remove margin */
         }
     </style>
 </head>
@@ -80,21 +83,20 @@
                     <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier(<strong>SOYA</strong> lecithin)) (41%), sugar (34.8%), <strong>PEANUT</strong> (<strong>PEANUT</strong>, sunflower oil) (20%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup.. Typical values per 100g Energy: 492 kcal / 2058 kJ Fat: 24.0g of which saturates: 9.7g Carbohydrate: 59.0g of which sugars: 56.0g Fibre: 6.1g Proteins: 7.2g Salt: 0.02g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>250g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 250g</span>
                         </p>
-
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO056</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00358-5444</span>
-                        </p>s
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO056</span>
+                        </p>
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                        </p>
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00358-</span>
+                            <input type="text" id="batchNoLast4" value="5444" maxlength="4"> <!-- Made editable -->
+                        </p>
                     </div>
                 </div>
             </div>
