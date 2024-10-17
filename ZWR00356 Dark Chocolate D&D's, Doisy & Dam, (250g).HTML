@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -53,6 +51,9 @@
             margin: 0; /* Remove default margin */
             line-height: 1.2; /* Adjust line height for fitting */
             white-space: nowrap; /* Prevent wrapping of text */
+            overflow: hidden; /* Prevent overflow */
+            text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+            display: block; /* Ensure it occupies full width */
         }
         
         strong {
