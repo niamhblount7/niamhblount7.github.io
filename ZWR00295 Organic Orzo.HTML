@@ -66,7 +66,35 @@
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center; /* Center vertically */
             margin: 0; /* Remove margin for tighter layout */
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -81,20 +109,22 @@
                     <p><strong>For allergens please see ingredients.</strong> Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong><span>500g</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong><span>LO041</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO041</span>
                         </p>
 
-                        <p>
-                            <strong>Best before: </strong><span>17-May-26</span>
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="17-May-26">
                         </p>
 
-                        <p>
-                            <strong>Batch no: </strong><span>ZWR00295-</span><span>5565</span>
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00295-</span>
+                            <input type="text" id="batchNoLast4" value="5565" maxlength="4">
                         </p>
                     </div>
                 </div>
