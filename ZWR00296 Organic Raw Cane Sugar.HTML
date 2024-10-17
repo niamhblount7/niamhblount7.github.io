@@ -31,8 +31,8 @@
         }
         
         .label-contents {
-            width: 95mm;
-            height: 38mm;
+            width: 95mm; 
+            height: 38mm;   
             padding-left: 7mm; 
             padding-top: 5mm;   
             overflow: hidden;
@@ -59,7 +59,7 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0; 
+            gap: 0mm; 
             margin-top: 5mm; 
             font-size: 0.7rem; 
         }
@@ -67,8 +67,8 @@
         .grid p {
             font-size: 0.7rem; 
             margin: 0; 
-            display: flex; 
-            align-items: center; 
+            display: flex;
+            align-items: center; /* Align text vertically */
         }
 
         /* Inline spacing and centering */
@@ -107,19 +107,10 @@
                     <p>Ingredients: Raw Cane Sugar*. (*Organic). Typical values per 100g Energy: 399 kcal / 1670 kJ Fat: 0g of which saturates: 0g Carbohydrate: 99.8g of which sugars: 99.8g Proteins: 0g Salt: 0.15g</p>
 
                     <div class="grid">
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 500g</span>
-                        </p>
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="30-Jun-26">
-                        </p>
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> LO042</span>
-                        </p>
-                        <p class="inline">
-                            <strong>Batch no:</strong><span>ZWR00296-</span>
-                            <input type="text" id="batchNoLast4" value="5503" maxlength="4">
-                        </p>
+                        <p class="inline"><strong>Net weight:</strong><span> 500g</span></p>
+                        <p class="inline"><strong>Best before:</strong> <input type="text" id="bestBefore" value="30-Jun-26"></p>
+                        <p class="inline"><strong>Stock item code:</strong><span> LO042</span></p>
+                        <p class="inline"><strong>Batch no:</strong><span> ZWR00296-</span><input type="text" id="batchNoLast4" value="5503" maxlength="4"></p>
                     </div>
                 </div>
             </div>
