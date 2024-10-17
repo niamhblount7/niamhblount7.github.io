@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -61,13 +59,42 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Space between items in the grid */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -80,20 +107,22 @@
                     <p>Ingredients: Jasmine Rice* *(Organic certified ingredients). Typical values per 100g Energy: 355 kcal / 1514 kJ Fat: 0.7g of which saturates: 0.18g Carbohydrate: 81.1g of which sugars: 0.12g Fibre: 0.8g Proteins: 6.1g Salt: 0g</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>500g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>13-Feb-26</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO040</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00294-5493</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO040</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="13-Feb-26">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00294-</span>
+                            <input type="text" id="batchNoLast4" value="5493" maxlength="4">
                         </p>
                     </div>
                 </div>
