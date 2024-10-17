@@ -11,80 +11,98 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important;
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 0; /* Removed padding */
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 5mm; /* Adjust padding */
-            padding-top: 0mm;   /* Reduced top padding to move content upwards */
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;   /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.85rem; /* Reduced size for fitting */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            line-height: 1; /* Compact line height */
         }
-        
+
         p {
-            font-size: 0.55rem; /* Reduced size for ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
-            white-space: normal; /* Allow text to wrap normally */
-            overflow-wrap: break-word; /* Break long words if necessary */
-            display: block; /* Ensure it occupies full width */
+            font-size: 0.59rem; /* Ingredients font size */
+            margin: 0;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0mm; /* Set space between items in the grid to 0 */
-            margin-top: 0; /* Removed any top margin */
-            font-size: 0.65rem; /* Set font size to 0.65rem for the grid */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
+            font-size: 0.7rem;
         }
-        
+
         .grid p {
-            font-size: 0.65rem; /* Ensure font size is consistent with the grid */
-            margin: 0; /* Ensure there's no margin */
+            font-size: 0.7rem;
+            margin: 0;
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
+            padding: 0; /* Remove padding */
         }
 
         /* Editable input styling */
         input[type="text"] {
             font-family: Stag;
-            font-size: 0.65rem; /* Reduced font size for input */
+            font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: auto;
-            padding: 0;
-            display: inline; /* Display inline for alignment */
-            margin-left: 5px; /* Add some space between label and input */
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
         }
 
         input[type="text"]:focus {
             outline: none;
         }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -96,22 +114,29 @@
                     <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier (<strong>SOYA</strong> lecithin)) (60%), sugar (35%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Cocoa Solids: 50% minimum. Typical values per 100g Energy: 463 kcal / 1941 kJ Fat: 18.0g of which saturates: 11.0g Carbohydrate: 67.0g of which sugars: 65.0g Fibre: 7.1g Proteins: 3.3g Salt: 0.10g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
                     <div class="grid">
+                        <!-- Net weight in first column -->
                         <p>
                             <strong>Net weight: </strong>
                             <span>250g</span>
                         </p>
+
+                        <!-- Stock item code in second column -->
                         <p>
                             <strong>Stock item code: </strong>
                             <span>LO055</span>
                         </p>
-                        <p style="grid-column: span 2; margin-top: 0;">
-                            <strong>Best before: </strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
-                        </p>
-                        <p style="grid-column: span 2; margin-top: 0;">
-                            <strong>Batch no: </strong>
-                            <span>ZWR00356-</span>
-                            <input type="text" id="batchNoLast4" value="5557" maxlength="4"> <!-- Made editable -->
+
+                        <!-- Best before and Batch no container -->
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00356-</span>
+                                <input type="text" id="batchNoLast4" value="5557" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
+                            </div>
                         </p>
                     </div>
                 </div>
