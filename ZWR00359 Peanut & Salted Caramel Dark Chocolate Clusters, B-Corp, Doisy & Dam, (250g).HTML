@@ -71,6 +71,16 @@
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
             margin: 0; /* Remove margin for grid items */
         }
+        
+        input {
+            width: auto; /* Allow the input width to adjust */
+            border: none; /* Remove default border */
+            font-size: 0.7rem; /* Match font size */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+            outline: none; /* Remove outline on focus */
+            background-color: transparent; /* Make background transparent */
+        }
     </style>
 </head>
 <body>
@@ -87,7 +97,7 @@
                             <span>250g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" value="28-Feb-25" />
                         </p>
 
                         <p>
@@ -95,7 +105,8 @@
                             <span>LO057</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span>ZWR00359-5419</span>
+                            <span>ZWR00359-</span>
+                            <input type="text" value="5419" />
                         </p>
                     </div>
                 </div>
