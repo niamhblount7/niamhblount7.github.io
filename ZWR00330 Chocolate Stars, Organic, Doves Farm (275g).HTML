@@ -61,13 +61,42 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Space between items in the grid */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -77,23 +106,25 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Chocolate Stars, Organic, Doves Farm (275g)</h1>
-                    <p>Ingredients: maize flour*, rice flour* cane sugar*, chocolate*5% (cocoa mass*, cane sugar*, cocoa butter* natural cocoa powder*), cocoa*, salt, rice bran extract*. (*Organic). Energy 1693kJ/ 400kcal Fat: 4.5g of which saturates: 2.5g Carbohydrates: 82g of which sugars: 24g Fibre: 3.5g Protein: 6.6g Salt: 0.29g</p>
+                    <p>Ingredients: maize flour*, rice flour* cane sugar*, chocolate*5% (cocoa mass*, cane sugar*, cocoa butter* natural cocoa powder*), cocoa*, salt, rice bran extract*. (*Organic). Energy 1693kJ/400kcal Fat: 4.5g of which saturates: 2.5g Carbohydrates: 82g of which sugars: 24g Fibre: 3.5g Protein: 6.6g Salt: 0.29g</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>275g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 275g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO035</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00330-5570</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO035</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00330-</span>
+                            <input type="text" id="batchNoLast4" value="5570" maxlength="4">
                         </p>
                     </div>
                 </div>
