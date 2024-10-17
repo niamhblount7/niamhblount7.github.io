@@ -67,6 +67,29 @@
         .grid p {
             font-size: 0.7rem; 
             margin: 0; 
+            display: flex;
+            align-items: center;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -78,13 +101,21 @@
                     <h1>Organic Raw Cane Sugar</h1>
                     <p>Ingredients: Raw Cane Sugar*. (*Organic). Typical values per 100g Energy: 399 kcal / 1670 kJ Fat: 0g of which saturates: 0g Carbohydrate: 99.8g of which sugars: 99.8g Proteins: 0g Salt: 0.15g</p>
 
-                    
-
                     <div class="grid">
-                        <p><strong>Net weight: </strong>500g</p>
-                        <p><strong>Best before: </strong>30-Jun-26</p>
-                        <p><strong>Stock item code: </strong>LO042</p>
-                        <p><strong>Batch no: </strong>ZWR00296-5503</p>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
+                        </p>
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="30-Jun-26">
+                        </p>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO042</span>
+                        </p>
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00296-</span>
+                            <input type="text" id="batchNoLast4" value="5503" maxlength="4">
+                        </p>
                     </div>
                 </div>
             </div>
