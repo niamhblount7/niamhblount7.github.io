@@ -59,7 +59,7 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0mm; 
+            gap: 0; 
             margin-top: 5mm; 
             font-size: 0.7rem; 
         }
@@ -67,8 +67,8 @@
         .grid p {
             font-size: 0.7rem; 
             margin: 0; 
-            display: flex;
-            align-items: center;
+            display: flex; 
+            align-items: center; 
         }
 
         /* Inline spacing and centering */
@@ -76,6 +76,11 @@
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
@@ -86,7 +91,6 @@
             background-color: transparent;
             width: auto;
             padding: 0;
-            margin-left: 0.5rem; /* Adjust spacing to match the strong text */
         }
 
         input[type="text"]:focus {
@@ -113,8 +117,7 @@
                             <strong>Stock item code:</strong><span> LO042</span>
                         </p>
                         <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00296-</span>
+                            <strong>Batch no:</strong><span>ZWR00296-</span>
                             <input type="text" id="batchNoLast4" value="5503" maxlength="4">
                         </p>
                     </div>
