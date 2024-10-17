@@ -5,73 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important;
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;    /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            line-height: 1; /* Compact line height */
         }
-        
+
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem; /* Ingredients font size */
+            margin: 0;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Remove gap between items in the grid */
-            margin-top: 2mm; /* Reduce the space above the grid */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
+            font-size: 0.7rem;
         }
-        
+
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            margin: 0;
             display: flex; /* Use flexbox for inline alignment */
             align-items: center; /* Center items vertically */
-            margin: 0; /* Remove margin */
+            padding: 0; /* Remove padding */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -83,19 +114,26 @@
                     <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier(<strong>SOYA</strong> lecithin)) (41%), sugar (34.8%), <strong>PEANUT</strong> (<strong>PEANUT</strong>, sunflower oil) (20%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup.. Typical values per 100g Energy: 492 kcal / 2058 kJ Fat: 24.0g of which saturates: 9.7g Carbohydrate: 59.0g of which sugars: 56.0g Fibre: 6.1g Proteins: 7.2g Salt: 0.02g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
                     <div class="grid">
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 250g</span>
+                        <p>
+                            <strong>Net weight: </strong>
+                            <span>250g</span>
                         </p>
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> LO056</span>
+
+                        <p>
+                            <strong>Stock item code: </strong>
+                            <span>LO056</span>
                         </p>
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
-                        </p>
-                        <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00358-</span>
-                            <input type="text" id="batchNoLast4" value="5444" maxlength="4"> <!-- Made editable -->
+
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00358-</span>
+                                <input type="text" id="batchNoLast4" value="5444" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
+                            </div>
                         </p>
                     </div>
                 </div>
