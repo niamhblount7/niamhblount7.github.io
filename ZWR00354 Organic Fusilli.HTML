@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -35,39 +33,54 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Set to 0 for exact spacing */
             margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
     </style>
 </head>
@@ -80,20 +93,22 @@
                     <p>Ingredients: Organic durum <strong>WHEAT</strong> semolina. Energy: 1450 kJ/ 342kcal Fat: 1.9g of which saturates: 0.4g Carbohydrates: 67g of which sugars: 4g Fibre: 5g Protein: 12g Salt:0.1g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>500g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO003</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00354-4377</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO003</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <span>28-Feb-25</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00354-</span>
+                            <span>4377</span>
                         </p>
                     </div>
                 </div>
