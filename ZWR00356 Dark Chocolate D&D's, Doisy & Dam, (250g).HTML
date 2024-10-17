@@ -1,134 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labels</title>
+    <title>Niamh Blount's GitHub Page</title>
     <style>
-        @media print {
-            @page {
-                size: 100mm 40mm;
-                margin: 0;
-            }
-        }
-        
-        body {
-            margin: 0;
-            margin-top: 0 !important;
-        }
-        
-        .label {
-            width: 100mm;
-            height: 40mm;
-        }
-        
-        .label-bleed {
-            width: 100mm;
-            height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-        
-        .label-contents {
-            width: 95mm;
-            height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
-            overflow: hidden;
-            page-break-inside: avoid;
-        }
-        
-        h1 {
-            font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
-            font-weight: normal;
-            margin: 0; /* Remove default margin */
-        }
-        
-        p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
-        }
-        
-        strong {
-            font-weight: 500; /* Bold for strong text */
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Set to 0 for exact spacing */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
-        }
-        
-        .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            display: flex;
-            align-items: center;
-            margin: 0;
-        }
-
-        /* Inline spacing and centering */
-        .inline {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        /* Add exactly one space */
-        .inline strong::after {
-            content: "\00A0"; /* Unicode for non-breaking space */
-        }
-
-        /* Editable input styling */
-        input[type="text"] {
-            font-family: Stag;
-            font-size: 0.7rem;
-            border: none;
-            background-color: transparent;
-            width: auto;
-            padding: 0;
-            margin-left: 3px; /* Space between label and input */
-        }
-
-        input[type="text"]:focus {
-            outline: none;
-        }
+        @font-face { font-family: "Stag Black Italic"; src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype"); }
+        @font-face { font-family: "Stag Black"; src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black.ttf") format("truetype"); }
+        body { margin: 0; font-family: Arial, sans-serif; }
+        main { padding: 20px; }
+        h1 { font-family: Stag Black; font-size: 1.5rem; margin: 0; }
+        p { font-size: 1rem; margin: 0; line-height: 1.5; }
+        .button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-left: 10px; display: inline-block; }
+        .ingredients { margin-top: 20px; }
+        .allergens { font-weight: bold; }
     </style>
 </head>
 <body>
-    <div class="label">
-        <div class="label-bleed">
-            <div class="label-contents">
-                <div style="font-family: Stag;">
-                    <h1>Dark Chocolate D&D's, Doisy & Dam, (250g)</h1>
-                    <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier (<strong>SOYA</strong> lecithin)) (60%), sugar (35%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Cocoa Solids: 50% minimum. Typical values per 100g Energy: 463 kcal / 1941 kJ Fat: 18.0g of which saturates: 11.0g Carbohydrate: 67.0g of which sugars: 65.0g Fibre: 7.1g Proteins: 3.3g Salt: 0.10g</p>
-                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
-                    <div class="grid">
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 250g</span>
-                        </p>
+    <main>
+        <h1>Pick your product</h1>
+        <p>This is a simple webpage hosted on GitHub Pages.</p>
+        <p>Feel free to explore my projects and repositories!</p>
+        <p>
+            <a href="https://github.com/niamhblount7" target="_blank">Visit my GitHub profile</a>
+            <button class="button" onclick="location.href='CaseLabels.html'">Case Labels</button>
+        </p>
+        <p>
+            <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
+        </p>
+        <!-- Other buttons -->
+        <button class="button" onclick="openLabel('ZWR00356%20Dark%20Chocolate%20D%26D%27s%2C%20Doisy%20%26%20Dam%2C%20(250g).HTML')">ZWR00356 Dark Chocolate D&D's, Doisy & Dam, (250g)</button>
+        <!-- Other buttons -->
 
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> LO055</span>
-                        </p>
-
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
-                        </p>
-
-                        <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00356-</span>
-                            <input type="text" id="batchNoLast4" value="5557" maxlength="4">
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- Ingredients and allergens section -->
+        <div class="ingredients">
+            <h2>Ingredients</h2>
+            <p>Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier (SOYA lecithin)) (60%), sugar (35%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Cocoa Solids: 50% minimum.</p>
+            <h3>Typical values per 100g</h3>
+            <ul>
+                <li>Energy: 463 kcal / 1941 kJ</li>
+                <li>Fat: 18.0g of which saturates: 11.0g</li>
+                <li>Carbohydrate: 67.0g of which sugars: 65.0g</li>
+                <li>Fibre: 7.1g</li>
+                <li>Proteins: 3.3g</li>
+                <li>Salt: 0.10g</li>
+            </ul>
+            <h3>Allergens</h3>
+            <p class="allergens">For allergens please see ingredients in bold. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
         </div>
-    </div>
+    </main>
+
+    <script>
+        function openLabel(labelFile) {
+            // Open the selected label page
+            window.open(labelFile, '_self');
+        }
+    </script>
 </body>
 </html>
