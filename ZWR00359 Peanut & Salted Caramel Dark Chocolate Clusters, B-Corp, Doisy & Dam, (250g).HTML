@@ -16,7 +16,7 @@
         
         body {
             margin: 0;
-            margin-top: 0 !important;
+            padding: 0; /* Remove any additional padding */
         }
         
         .label {
@@ -28,15 +28,15 @@
             width: 100mm;
             height: 40mm;
             padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding-top: 0; /* No top padding */
+            padding-bottom: 0; /* No bottom padding */
         }
         
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm; /* Adjust left padding */
+            padding-top: 0; /* Removed top padding for alignment */
             overflow: hidden;
             page-break-inside: avoid;
         }
@@ -46,6 +46,7 @@
             font-size: 0.95rem; /* Keep this size for the title */
             font-weight: normal;
             margin: 0; /* Remove default margin */
+            line-height: 1; /* Compact line height */
         }
         
         p {
@@ -60,7 +61,7 @@
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
             gap: 5mm; /* Space between items in the grid */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
@@ -68,6 +69,7 @@
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            margin: 0; /* Remove margin for grid items */
         }
     </style>
 </head>
@@ -77,7 +79,7 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Peanut & Salted Caramel Dark Chocolate Clusters, B-Corp, Doisy & Dam, (250g)</h1>
-                    <p>Ingredients: Dark Chocolate (65%) (Sugar, Cocoa Mass, Cocoa Butter, Emulsifier (<strong>SOYA</strong> Lecithin), Natural Vanilla Flavour),<strong>PEANUTS</strong> (30%), Sea Salt Caramel Pieces (4.5%) (Sugar, Cocoa Butter, Rice Starch, Sea Salt, Sodium Bicarbonate), Sea Salt.. Typical values per 100g Energy: 551 kcal / 2291 kJ Fat: 37.0g of which saturates: 15.0g Carbohydrate: 41.0g of which sugars: 37.0g Fibre: 7.3g Proteins: 10.0g Salt: 0.74g</p>
+                    <p>Ingredients: Dark Chocolate (65%) (Sugar, Cocoa Mass, Cocoa Butter, Emulsifier (<strong>SOYA</strong> Lecithin), Natural Vanilla Flavour), <strong>PEANUTS</strong> (30%), Sea Salt Caramel Pieces (4.5%) (Sugar, Cocoa Butter, Rice Starch, Sea Salt, Sodium Bicarbonate), Sea Salt. Typical values per 100g Energy: 551 kcal / 2291 kJ Fat: 37.0g of which saturates: 15.0g Carbohydrate: 41.0g of which sugars: 37.0g Fibre: 7.3g Proteins: 10.0g Salt: 0.74g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
                     <div class="grid">
                         <p>
