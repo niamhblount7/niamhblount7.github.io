@@ -33,64 +33,68 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* No gap between grid items */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0;
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            display: flex; /* Use flex for aligning items */
-            align-items: center; /* Center items vertically */
-            margin: 0; /* Remove margin to eliminate space */
-        }
-
-        /* Ensure inline display for specific text */
-        .inline {
-            display: inline-flex; /* Ensure items are inline and can be vertically centered */
+            font-size: 0.7rem;
+            display: flex;
             align-items: center;
-            white-space: nowrap; /* Prevent line break between words */
+            margin: 0;
         }
 
-        /* Style the editable inputs */
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
         input[type="text"] {
             font-family: Stag;
-            font-size: 0.7rem; /* Match font size */
+            font-size: 0.7rem;
             border: none;
             background-color: transparent;
             width: auto;
             padding: 0;
-            margin: 0 0 0 5px; /* Slight left margin for spacing */
         }
 
         input[type="text"]:focus {
-            outline: none; /* Remove outline on focus */
+            outline: none;
         }
     </style>
 </head>
@@ -103,24 +107,20 @@
                     <p>Ingredients: Italian short grain rice*. (*Organic). Typical values per 100g Energy: 346 kcal / 1448 kJ Fat: 0.90g of which saturates: 0.20g Carbohydrate: 77.80g of which sugars: 0.30g Proteins: 6.20g Salt: 0.0125g</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>500g</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span>500g</span>
                         </p>
 
                         <p class="inline">
-                            <strong>Best before: </strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25">
+                            <strong>Stock item code:</strong><span>LO038</span>
                         </p>
 
                         <p class="inline">
-                            <strong>Stock item code: </strong>
-                            <span>LO038</span>
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p class="inline">
-                            <strong>Batch no: </strong>
-                            <input type="text" id="batchNo" value="ZWR00292-5475">
+                            <strong>Batch no:</strong> <input type="text" id="batchNo" value="ZWR00292-5475">
                         </p>
                     </div>
                 </div>
@@ -129,3 +129,4 @@
     </div>
 </body>
 </html>
+s
