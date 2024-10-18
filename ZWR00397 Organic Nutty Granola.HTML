@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -61,13 +59,16 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Space between items in the grid */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center;
+            margin: 0;
         }
 
         /* Inline spacing and centering */
@@ -75,6 +76,11 @@
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
@@ -98,8 +104,9 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Organic Nutty Granola</h1>
-                    <p>Ingredients: Organic Gluten Free <strong>OATS</strong>, Organic Coconut Sugar, Organic Desiccated Coconut, Organic <strong>BRAZIL NUTS</strong>, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic <strong>CASHEW NUTS</strong>, Organic Coconut Chips, Organic <strong>ALMONDS</strong>, Organic Raisins. Nutritional Information per 100g Energy (kJ): 2059 Energy (kcal): 492 Fat (g): 32.5 of which saturates (g): 8.2 Carbohydrate (g): 43.6 of which sugars (g): 12.9 Protein (g): 11.9 Fibre (g): 7.5 Salt (g): 0.0</p>
+                    <p>Ingredients: Organic Gluten Free OATS, Organic Coconut Sugar, Organic Desiccated Coconut, Organic BRAZIL NUTS, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic CASHEW NUTS, Organic Coconut Chips, Organic ALMONDS, Organic Raisins. Nutritional Information per 100g Energy (kJ): 2059 Energy (kcal): 492 Fat (g): 32.5 of which saturates (g): 8.2 Carbohydrate (g): 43.6 of which sugars (g): 12.9 Protein (g): 11.9 Fibre (g): 7.5 Salt (g): 0.0</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts and Sesame.</p>
+                    
                     <div class="grid">
                         <p class="inline">
                             <strong>Net weight:</strong><span> 400g</span>
