@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -36,56 +34,54 @@
             width: 95mm;
             height: 38mm;
             padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-top: 0;   /* Remove top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
             margin: 0; /* Remove default margin */
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
+            font-size: 0.59rem; /* Ingredients font size */
             margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            line-height: 1.2; /* Adjust line height */
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0; /* No gap */
+            margin-top: 2px; /* Moves the entire grid closer to the allergens section */
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
             display: flex;
             align-items: center;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
 
-        /* Inline spacing and centering */
         .inline {
             display: inline-flex;
             align-items: center;
             white-space: nowrap;
         }
 
-        /* Add exactly one space */
+        /* Adds space after strong elements */
         .inline strong::after {
             content: "\00A0"; /* Unicode for non-breaking space */
         }
 
-        /* Editable input styling */
         input[type="text"] {
             font-family: Stag;
             font-size: 0.7rem;
