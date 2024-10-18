@@ -25,28 +25,28 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 1mm 2mm 0 2mm;
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
 
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 3mm;
-            padding-top: 0;
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;   /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
 
         h1 {
             font-family: Stag;
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
             margin: 0;
-            line-height: 1;
+            line-height: 1; /* Compact line height */
         }
 
         p {
-            font-size: 0.59rem;
+            font-size: 0.59rem; /* Ingredients font size */
             margin: 0;
             line-height: 1;
             white-space: normal;
@@ -60,44 +60,47 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-            margin-top: 0;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
             font-size: 0.7rem;
         }
 
         .grid p {
             font-size: 0.7rem;
             margin: 0;
-            display: flex;
-            align-items: center;
-            padding: 0;
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
+            padding: 0; /* Remove padding */
         }
 
+        /* Editable input styling */
         input[type="text"] {
             font-family: Stag;
             font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: 50px;
-            padding: 0;
-            margin-left: 2px;
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
         }
 
         input[type="text"]:focus {
             outline: none;
         }
 
+        /* Flex container for Best Before and Batch No */
         .flex-container {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            margin-top: 0;
-            width: 100%;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
         }
 
+        /* Adjusting margin for spans for spaces */
         .grid span {
-            margin-left: 4px;
+            margin-left: 4px; /* Space equivalent to one bar press */
         }
 
     </style>
@@ -107,30 +110,30 @@
         <div class="label-bleed">
             <div class="label-contents">
                 <div style="font-family: Stag;">
-                    <h1>Dark Chocolate D&D's, Doisy & Dam, (250g)</h1>
-                    <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier (<strong>SOYA</strong> lecithin)) (60%), sugar (35%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Cocoa Solids: 50% minimum. Typical values per 100g Energy: 463 kcal / 1941 kJ Fat: 18.0g of which saturates: 11.0g Carbohydrate: 67.0g of which sugars: 65.0g Fibre: 7.1g Proteins: 3.3g Salt: 0.10g</p>
-                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
+                    <h1>Tomato and Smoked Paprika Picos (75g)</h1>
+                    <p>Ingredients: Picos (<strong>WHEAT</strong> flour, water, salt, yeast, emulsifier: diacetyltartaric acid esters of mono- and diglycerides), sun-dried tomato paste (rehydrated tomatoes, vegetable oils (sunflower and rapeseed oil in varying proportions), salt, glucose syrup (<strong>SULPHITES</strong>), paprika flakes, sweet smoked paprika, dried oregano). Typical values per 100g Energy: 1546kJ/367kcal Fat: 8.2g Of which saturates: 1.2g Carbohydrates: 63g Of which sugars: 8.8g Fibre: 1.7g Protein: 8g Salt: 4g</p>
+                    <p>For allergens please see ingredients in <strong>bold</strong>. May contain traces of Lupine, Soy, Milk, Mustard, Tree Nuts, Sesame, and Peanuts. Made in a factory that handles Celery and Egg.</p>
 
                     <div class="grid">
                         <p>
                             <strong>Net weight: </strong>
-                            <span>250g</span>
+                            <span>75g</span>
                         </p>
 
                         <p>
                             <strong>Stock item code: </strong>
-                            <span>LO055</span>
+                            <span>LO075</span>
                         </p>
 
                         <p style="grid-column: span 2; margin-top: 2px;">
                             <div class="flex-container">
                                 <strong>Best before: </strong>
-                                <input type="text" id="bestBefore" value="28-Feb-25">
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
                             </div>
                             <div class="flex-container">
                                 <strong>Batch no: </strong>
-                                <span>ZWR00356-</span>
-                                <input type="text" id="batchNoLast4" value="5557" maxlength="4">
+                                <span>ZWR00378-</span>
+                                <input type="text" id="batchNoLast4" value="4965" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
                             </div>
                         </p>
                     </div>
