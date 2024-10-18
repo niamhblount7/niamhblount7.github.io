@@ -5,82 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            padding: 0; /* Remove any additional padding */
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0; /* No top padding */
-            padding-bottom: 0; /* No bottom padding */
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust left padding */
-            padding-top: 0; /* Removed top padding for alignment */
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;    /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
             line-height: 1; /* Compact line height */
         }
-        
+
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem; /* Ingredients font size */
+            margin: 0;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Two columns */
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 0mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
+            font-size: 0.7rem;
         }
-        
+
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            margin: 0; /* Remove margin for grid items */
-        }
-        
-        input {
-            width: auto; /* Allow the input width to adjust */
-            border: none; /* Remove default border */
-            font-size: 0.7rem; /* Match font size */
+            font-size: 0.7rem;
+            margin: 0;
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
             padding: 0; /* Remove padding */
-            margin: 0; /* Remove margin */
-            outline: none; /* Remove outline on focus */
-            background-color: transparent; /* Make background transparent */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -95,18 +117,23 @@
                         <p>
                             <strong>Net weight: </strong>
                             <span>250g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <input type="text" value="28-Feb-25" />
                         </p>
 
                         <p>
                             <strong>Stock item code: </strong>
                             <span>LO057</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00359-</span>
-                            <input type="text" value="5419" />
+                        </p>
+
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00359-</span>
+                                <input type="text" id="batchNoLast4" value="5419" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
+                            </div>
                         </p>
                     </div>
                 </div>
