@@ -11,17 +11,17 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
             margin-top: 0 !important;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
@@ -29,33 +29,33 @@
             padding-top: 0;
             padding-bottom: 0;
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
-        
+
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -63,12 +63,38 @@
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
-        
+
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
             display: flex;
-            align-items: center; /* Align items vertically */
+            align-items: center;
             margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -81,25 +107,22 @@
                     <p>Ingredients: Organic <strong>Brazil NUTS</strong>. Typical values per 100g Energy: 2775kcal / 663kJ Fat: 68.80g of which saturates: 16.80g Carbohydrate: 3.10g of which sugars: 2.40g Proteins: 14.10g Salt: 0.0025g</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>250g</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 250g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>ZWR00376</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> ZWR00376</span>
                         </p>
 
-                        <p>
-                            <strong>Best before: </strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25" style="border:none; background-color:transparent; width:auto; min-width:50px; font-size:0.7rem;">
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
-                        <p>
-                            <strong>Batch no: </strong>
+                        <p class="inline">
+                            <strong>Batch no:</strong>
                             <span>ZWR00376-</span>
-                            <input type="text" id="batchNoLast4" value="PF24" maxlength="4" style="border:none; background-color:transparent; width:auto; min-width:50px; font-size:0.7rem;">
+                            <input type="text" id="batchNoLast4" value="PF24" maxlength="4">
                         </p>
                     </div>
                 </div>
