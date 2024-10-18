@@ -14,6 +14,7 @@
 
         body {
             margin: 0;
+            padding: 0;
         }
 
         .label {
@@ -24,20 +25,16 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 0mm;
-            display: flex;
-            align-items: flex-start; /* Align content to the top */
+            padding: 1mm 2mm 0 2mm;
         }
 
         .label-contents {
             width: 95mm;
-            padding-left: 7mm;
+            height: 38mm;
+            padding-left: 3mm;
             padding-top: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            box-sizing: border-box;
+            overflow: hidden;
+            page-break-inside: avoid;
         }
 
         h1 {
@@ -45,12 +42,16 @@
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
+            line-height: 1;
         }
 
         p {
             font-size: 0.59rem;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
 
         strong {
@@ -58,29 +59,19 @@
         }
 
         .grid {
-            margin-top: 2mm; /* Reduced space to move it closer to the allergens text */
-            width: 100%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
+            margin-top: 0;
             font-size: 0.7rem;
         }
 
         .grid p {
             font-size: 0.7rem;
+            margin: 0;
             display: flex;
             align-items: center;
-            margin: 0;
-        }
-
-        .inline {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .inline strong::after {
-            content: "\00A0";
+            padding: 0;
         }
 
         input[type="text"] {
@@ -88,12 +79,25 @@
             font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: auto;
+            width: 50px;
             padding: 0;
+            margin-left: 2px;
         }
 
         input[type="text"]:focus {
             outline: none;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .grid span {
+            margin-left: 4px;
         }
     </style>
 </head>
@@ -101,29 +105,31 @@
     <div class="label">
         <div class="label-bleed">
             <div class="label-contents">
-                <h1>Jumbo Oats, Organic, Pimhill, (600g)</h1>
-                <p>Ingredients: 100% rolled whole grain organic <strong>OATS</strong>*. Energy: 1410KJ/335Kcal Fat: 8.0g of which saturates: 1.32g Carbohydrate: 52.9g of which sugars: 1.0g Fibre: 13.8g Protein: 12.9g Salt <0.001g</p>
-                <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, and Sesame.</p>
-                
-                <!-- Moved the grid section directly below the allergen text -->
-                <div class="grid">
-                    <p class="inline">
-                        <strong>Net weight:</strong><span> 600g</span>
-                    </p>
-
-                    <p class="inline">
-                        <strong>Stock item code:</strong><span> LO033</span>
-                    </p>
-
-                    <p class="inline">
-                        <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
-                    </p>
-
-                    <p class="inline">
-                        <strong>Batch no:</strong>
-                        <span>ZWR00343-</span>
-                        <input type="text" id="batchNoLast4" value="5483" maxlength="4">
-                    </p>
+                <div style="font-family: Stag;">
+                    <h1>Jumbo Oats, Organic, Pimhill, (600g)</h1>
+                    <p>Ingredients: 100% rolled whole grain organic <strong>OATS</strong>*. Energy: 1410KJ/335Kcal Fat: 8.0g of which saturates: 1.32g Carbohydrate: 52.9g of which sugars: 1.0g Fibre: 13.8g Protein: 12.9g Salt <0.001g</p>
+                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, and Sesame.</p>
+                    <div class="grid">
+                        <p>
+                            <strong>Net weight:</strong>
+                            <span>600g</span>
+                        </p>
+                        <p>
+                            <strong>Stock item code:</strong>
+                            <span>LO033</span>
+                        </p>
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before:</strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25">
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no:</strong>
+                                <span>ZWR00343-</span>
+                                <input type="text" id="batchNoLast4" value="5483" maxlength="4" style="margin-left: 0;">
+                            </div>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
