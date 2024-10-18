@@ -82,6 +82,13 @@
         .inline strong::after {
             content: "\00A0"; /* Unicode for non-breaking space */
         }
+
+        /* Editable styles */
+        .editable {
+            border-bottom: 1px dashed #000; /* Visual cue for editable fields */
+            padding: 0 2px; /* Slight padding for readability */
+            min-width: 50px; /* Minimum width for editable fields */
+        }
     </style>
 </head>
 <body>
@@ -98,7 +105,8 @@
                         </p>
 
                         <p class="inline">
-                            <strong>Best before:</strong> <span>28-Feb-25</span>
+                            <strong>Best before:</strong> 
+                            <span class="editable" contenteditable="true">28-Feb-25</span>
                         </p>
 
                         <p class="inline">
@@ -106,7 +114,9 @@
                         </p>
 
                         <p class="inline">
-                            <strong>Batch no:</strong> <span>ZWR00371-5555</span>
+                            <strong>Batch no:</strong> 
+                            <span>ZWR00371-</span>
+                            <span class="editable" contenteditable="true">5555</span>
                         </p>
                     </div>
                 </div>
