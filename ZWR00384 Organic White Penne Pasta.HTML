@@ -61,13 +61,14 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Space between items in the grid set to 0 for uniformity */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            margin: 0; /* Remove default margin for consistency */
         }
     </style>
 </head>
@@ -76,8 +77,9 @@
         <div class="label-bleed">
             <div class="label-contents">
                 <div style="font-family: Stag;">
-                    <h1>Organic Brown Rice</h1>
-                    <p>Ingredients: Organic* whole grain rice. Typical values per 100g Energy: 340 kcal / 1420 kJ Fat: 2g of which saturates: 0.5g Carbohydrate: 75g of which sugars: 1g Proteins: 8g Salt: 0.01g</p>
+                    <h1>Organic White Penne Pasta</h1>
+                    <p>Ingredients: Organic* Durum <strong>WHEAT</strong> semolina. Typical values per 100g Energy: 358 kcal / 1516 kJ Fat: 1.5g of which saturates: 0.3g Carbohydrate: 73.0g of which sugars: 3.0g Proteins: 11.5g Salt: 0.05g</p>
+                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
                     <div class="grid">
                         <p>
                             <strong>Net weight:</strong>
@@ -85,16 +87,15 @@
                         </p>
                         <p>
                             <strong>Stock item code:</strong>
-                            <span>LO003</span>
+                            <span>LO026</span>
                         </p>
                         <p>
                             <strong>Best before:</strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25">
+                            <span>28-Feb-25</span>
                         </p>
                         <p>
                             <strong>Batch no:</strong>
-                            <span>ZWR00384-</span>
-                            <input type="text" id="batchNoLast4" value="5572" maxlength="4">
+                            <span>ZWR00384-5573</span>
                         </p>
                     </div>
                 </div>
