@@ -11,78 +11,67 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important; /* Set margin to 0 */
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 0;    /* Set top padding to 0 */
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;    /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            line-height: 1; /* Compact line height */
         }
-        
+
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem; /* Ingredients font size */
+            margin: 0;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
+            font-size: 0.7rem;
         }
-        
+
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            display: flex;
-            align-items: center;
-            margin: 0; /* Remove default margin */
+            font-size: 0.7rem;
+            margin: 0;
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
             padding: 0; /* Remove padding */
-        }
-
-        /* Inline spacing and centering */
-        .inline {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-            margin: 0; /* Set vertical margin to 0 */
-        }
-
-        /* Add exactly one space */
-        .inline strong::after {
-            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
@@ -91,13 +80,29 @@
             font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: auto;
-            padding: 0;
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
         }
 
         input[type="text"]:focus {
             outline: none;
         }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -108,24 +113,27 @@
                     <h1>Organic Nutty Granola</h1>
                     <p>Ingredients: Organic Gluten Free OATS, Organic Coconut Sugar, Organic Desiccated Coconut, Organic BRAZIL NUTS, Organic Sunflower Seeds, Organic Pumpkin Seeds, Organic CASHEW NUTS, Organic Coconut Chips, Organic ALMONDS, Organic Raisins. Nutritional Information per 100g Energy (kJ): 2059 Energy (kcal): 492 Fat (g): 32.5 of which saturates (g): 8.2 Carbohydrate (g): 43.6 of which sugars (g): 12.9 Protein (g): 11.9 Fibre (g): 7.5 Salt (g): 0.0</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts and Sesame.</p>
-
                     <div class="grid">
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 400g</span>
+                        <p>
+                            <strong>Net weight: </strong>
+                            <span>400g</span>
                         </p>
 
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> ZWR00397</span>
+                        <p>
+                            <strong>Stock item code: </strong>
+                            <span>ZWR00397</span>
                         </p>
 
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
-                        </p>
-
-                        <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00397-</span>
-                            <input type="text" id="batchNoLast4" value="5562" maxlength="4">
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00397-</span>
+                                <input type="text" id="batchNoLast4" value="5562" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
+                            </div>
                         </p>
                     </div>
                 </div>
