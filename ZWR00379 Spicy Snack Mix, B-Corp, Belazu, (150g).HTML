@@ -14,7 +14,7 @@
 
         body {
             margin: 0;
-            padding: 0;
+            margin-top: 0 !important;
         }
 
         .label {
@@ -25,33 +25,31 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 1mm 2mm 0 2mm; /* Minimal padding */
+            padding: 3mm;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 3mm; /* Reduced left padding */
-            padding-top: 0;   /* Removed top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
 
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Title font size */
+            font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
-            line-height: 1; /* Compact line height */
         }
 
         p {
-            font-size: 0.59rem; /* Ingredients font size */
+            font-size: 0.59rem;
             margin: 0;
-            line-height: 1;
-            white-space: normal;
-            overflow-wrap: break-word;
-            display: block;
+            line-height: 1.2;
         }
 
         strong {
@@ -60,34 +58,44 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            gap: 0; /* No gap */
-            margin-top: 0; /* No margin */
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            margin-top: 5mm;
             font-size: 0.7rem;
         }
 
         .grid p {
             font-size: 0.7rem;
-            margin: 0;
-            display: flex; /* Use flexbox for inline alignment */
-            align-items: center; /* Center items vertically */
-            padding: 0; /* Remove padding */
-        }
-
-        /* Flex container for Best Before and Batch No */
-        .flex-container {
             display: flex;
-            justify-content: flex-start; /* Align to the left */
-            align-items: center; /* Center items vertically */
-            margin-top: 0; /* Minimize vertical space */
-            width: 100%; /* Full width */
+            align-items: center;
+            margin: 0;
         }
 
-        /* Adjusting margin for spans for spaces */
-        .grid span {
-            margin-left: 4px; /* Space equivalent to one bar press */
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
         }
 
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -99,29 +107,22 @@
                     <p>Ingredients: Corn, Broad Bean, Sunflower Oil, Chilli Flavour Seasoning [Salt, Maltodextrin, Spices, Dried Tomato Powder, Natural Flavouring, Acidity Regulator: Citric Acid, Paprika Oil (Sunflower Oil, Paprika Oleoresin)]. Typical values per 100g Energy: 1810kJ/432kcal Fat: 14.9g Of which saturates: 1.4g Carbohydrates: 54.8g Of which sugars: 1.1g Fibre: 12.2g Protein: 13.6g Salt: 1g</p>
 
                     <div class="grid">
-                        <!-- Net weight in first column -->
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>150g</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 150g</span>
                         </p>
 
-                        <!-- Stock item code in second column -->
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO073</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO073</span>
                         </p>
 
-                        <!-- Best before and Batch no container -->
-                        <p style="grid-column: span 2; margin-top: 2px;">
-                            <div class="flex-container">
-                                <strong>Best before: </strong>
-                                <span>28-Feb-25</span>
-                            </div>
-                            <div class="flex-container">
-                                <strong>Batch no: </strong>
-                                <span>ZWR00379-</span>
-                                <span>5078</span>
-                            </div>
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00379-</span>
+                            <input type="text" id="batchNoLast4" value="5078" maxlength="4">
                         </p>
                     </div>
                 </div>
