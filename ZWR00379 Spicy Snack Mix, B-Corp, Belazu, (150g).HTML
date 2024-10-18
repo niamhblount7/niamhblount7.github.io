@@ -5,70 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important;
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;   /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
+            line-height: 1; /* Compact line height */
         }
-        
+
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem; /* Ingredients font size */
+            margin: 0;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
+            font-size: 0.7rem;
         }
-        
+
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            margin: 0;
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
+            padding: 0; /* Remove padding */
         }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -80,20 +99,29 @@
                     <p>Ingredients: Corn, Broad Bean, Sunflower Oil, Chilli Flavour Seasoning [Salt, Maltodextrin, Spices, Dried Tomato Powder, Natural Flavouring, Acidity Regulator: Citric Acid, Paprika Oil (Sunflower Oil, Paprika Oleoresin)]. Typical values per 100g Energy: 1810kJ/432kcal Fat: 14.9g Of which saturates: 1.4g Carbohydrates: 54.8g Of which sugars: 1.1g Fibre: 12.2g Protein: 13.6g Salt: 1g</p>
 
                     <div class="grid">
+                        <!-- Net weight in first column -->
                         <p>
                             <strong>Net weight: </strong>
                             <span>150g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
                         </p>
 
+                        <!-- Stock item code in second column -->
                         <p>
                             <strong>Stock item code: </strong>
                             <span>LO073</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00379-5078</span>
+                        </p>
+
+                        <!-- Best before and Batch no container -->
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <span>28-Feb-25</span>
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00379-</span>
+                                <span>5078</span>
+                            </div>
                         </p>
                     </div>
                 </div>
