@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -35,39 +33,54 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0;
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
@@ -92,21 +105,24 @@
                 <div style="font-family: Stag;">
                     <h1>Organic Apricot, Fig & Seed Muesli</h1>
                     <p>Ingredients: Organic Jumbo <strong>OATS</strong>, Organic Raisins, Organic <strong>BARLEY</strong> Flakes, Organic <strong>RYE</strong> Flakes, Organic Porridge <strong>OATS</strong>, Organic Apricots, Organic Figs, Organic Apple, Organic Pumpkin Seeds, Organic Sunflower seeds. Nutritional Information per 100g Energy (kJ): 1530 Energy (kcal): 363 Fat (g): 9.2 of which saturates (g): 1.41 Carbohydrate (g): 56.4 of which sugars (g): 16.1 Protein (g): 9.09 Fibre (g): 9.3 Salt (g): 0.02</p>
-                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts and Sesame.</p>
+
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>600g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <input type="text" id="bestBefore" value="28-Feb-25">
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 600g</span>
                         </p>
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>ZWR00396</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <input type="text" id="batchNo" value="ZWR00396-5523">
+
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> ZWR00396</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00396-</span>
+                            <input type="text" id="batchNoLast4" value="5523" maxlength="4">
                         </p>
                     </div>
                 </div>
