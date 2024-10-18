@@ -24,7 +24,7 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 0mm; /* No padding on top and bottom */
+            padding: 0mm;
             display: flex;
             align-items: flex-start; /* Align content to the top */
         }
@@ -32,10 +32,10 @@
         .label-contents {
             width: 95mm;
             padding-left: 7mm;
-            padding-top: 0; /* Reduced top padding to push content up */
+            padding-top: 0;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align items to the top */
+            justify-content: flex-start;
             align-items: flex-start;
             box-sizing: border-box;
         }
@@ -58,6 +58,7 @@
         }
 
         .grid {
+            margin-top: 2mm; /* Reduced space to move it closer to the allergens text */
             width: 100%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -102,7 +103,9 @@
             <div class="label-contents">
                 <h1>Jumbo Oats, Organic, Pimhill, (600g)</h1>
                 <p>Ingredients: 100% rolled whole grain organic <strong>OATS</strong>*. Energy: 1410KJ/335Kcal Fat: 8.0g of which saturates: 1.32g Carbohydrate: 52.9g of which sugars: 1.0g Fibre: 13.8g Protein: 12.9g Salt <0.001g</p>
-                <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
+                <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, and Sesame.</p>
+                
+                <!-- Moved the grid section directly below the allergen text -->
                 <div class="grid">
                     <p class="inline">
                         <strong>Net weight:</strong><span> 600g</span>
