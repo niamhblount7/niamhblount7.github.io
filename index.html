@@ -11,22 +11,7 @@
         main { padding: 20px; }
         h1 { font-family: Stag Black; font-size: 1.5rem; margin: 0; }
         p { font-size: 1rem; margin: 0; line-height: 1.5; }
-        .button { 
-            padding: 10px 20px; 
-            background-color: #007bff; 
-            color: white; 
-            border: none; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-size: 16px; 
-            margin: 5px; /* Adjust margin for better spacing */
-        }
-        .button-container {
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
-            gap: 10px; /* Space between buttons */
-            margin: 20px 0; /* Space above and below the grid */
-        }
+        .button { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-left: 10px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -41,75 +26,92 @@
         <p>
             <a href="https://github.com/niamhblount7/niamhblount7" target="_blank">Check out my project</a>
         </p>
-        <div class="button-container">
-            <button class="button" onclick="openLabel('ZWR00292%20Organic%20Arborio%20Rice.HTML')">ZWR00292 Organic Arborio Rice</button>
-            <button class="button" onclick="openLabel('ZWR00293%20Organic%20Wild%20Rice.HTML')">ZWR00293 Organic Wild Rice</button>
-            <button class="button" onclick="openLabel('ZWR00294%20Organic%20Jasmine%20Rice.HTML')">ZWR00294 Organic Jasmine Rice</button>
-            <button class="button" onclick="openLabel('ZWR00295%20Organic%20Orzo.HTML')">ZWR00295 Organic Orzo</button>
-            <button class="button" onclick="openLabel('ZWR00296%20Organic%20Raw%20Cane%20Sugar.HTML')">ZWR00296 Organic Raw Cane Sugar</button>
-            <button class="button" onclick="openLabel('ZWR00297%20Organic%20Coconut%20Sugar.HTML')">ZWR00297 Organic Coconut Sugar</button>
-            <button class="button" onclick="openLabel('ZWR00298%20Organic%20Desiccated%20Coconut.HTML')">ZWR00298 Organic Desiccated Coconut</button>
-            <button class="button" onclick="openLabel('ZWR00299%20Organic%20Caster%20Sugar.HTML')">ZWR00299 Organic Caster Sugar</button>
-            <button class="button" onclick="openLabel('ZWR00300%20Organic%20Demerara%20Sugar.HTML')">ZWR00300 Organic Demerara Sugar</button>
-            <button class="button" onclick="openLabel('ZWR00301%20Organic%20Cocoa%20Powder.HTML')">ZWR00301 Organic Cocoa Powder</button>
-            <button class="button" onclick="openLabel('ZWR00302%20Organic%20Pumpkin%20Seeds.HTML')">ZWR00302 Organic Pumpkin Seeds</button>
-            <button class="button" onclick="openLabel('ZWR00303%20Organic%20Chia%20Seeds.HTML')">ZWR00303 Organic Chia Seeds</button>
-            <button class="button" onclick="openLabel('ZWR00304%20Organic%20Prunes.HTML')">ZWR00304 Organic Prunes</button>
-            <button class="button" onclick="openLabel('ZWR00305%20Organic%20Banana%20Chips.HTML')">ZWR00305 Organic Banana Chips</button>
-            <button class="button" onclick="openLabel('ZWR00306%20Organic%20Cranberries.HTML')">ZWR00306 Organic Cranberries</button>
-            <button class="button" onclick="openLabel('ZWR00319%20Organic%20Whole%20Cashews.HTML')">ZWR00319 Organic Whole Cashews</button>
-            <button class="button" onclick="openLabel('ZWR00320%20Organic%20Red%20Lentils.HTML')">ZWR00320 Organic Red Lentils</button>
-            <button class="button" onclick="openLabel('ZWR00321%20Organic%20White%20Basmati%20Rice.HTML')">ZWR00321 Organic White Basmati Rice</button>
-            <button class="button" onclick="openLabel('ZWR00322%20Dark%20Chocolate%20Buttons%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00322 Dark Chocolate Buttons, Organic, Cocoa Loco, (250g)</button>
-            <button class="button" onclick="openLabel('ZWR00323%20Milk%20Chocolate%20Buttons%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00323 Milk Chocolate Buttons, Organic, Cocoa Loco, (250g)</button>
-            <button class="button" onclick="openLabel('ZWR00324%20Organic%20Quinoa.HTML')">ZWR00324 Organic Quinoa</button>
-            <button class="button" onclick="openLabel('ZWR00325%20Organic%20Raisins.HTML')">ZWR00325 Organic Raisins</button>
-            <button class="button" onclick="openLabel('ZWR00326%20Organic%20Pitted%20Dates.HTML')">ZWR00326 Organic Pitted Dates</button>
-            <button class="button" onclick="openLabel('ZWR00327%20Organic%20Chickpeas.HTML')">ZWR00327 Organic Chickpeas</button>
-            <button class="button" onclick="openLabel('ZWR00328%20Fibre%20Flakes%2C%20Organic%2C%20Doves%20Farm%20(325g).HTML')">ZWR00328 Fibre Flakes, Organic, Doves Farm (325g)</button>
-            <button class="button" onclick="openLabel('ZWR00329%20Cornflakes%2C%20Organic%2C%20Doves%20Farm%20(325g).HTML')">ZWR00329 Cornflakes, Organic, Doves Farm (325g)</button>
-            <button class="button" onclick="openLabel('ZWR00330%20Chocolate%20Stars%2C%20Organic%2C%20Doves%20Farm%20(275g).HTML')">ZWR00330 Chocolate Stars, Organic, Doves Farm (275g)</button>
-            <button class="button" onclick="openLabel('ZWR00331%20Organic%20Brown%20Basmati%20Rice.HTML')">ZWR00331 Organic Brown Basmati Rice</button>
-            <button class="button" onclick="openLabel('ZWR00332%20Organic%20Green%20Lentils.HTML')">ZWR00332 Organic Green Lentils</button>
-            <button class="button" onclick="openLabel('ZWR00333%20Organic%20Butter%20Beans.HTML')">ZWR00333 Organic Butter Beans</button>
-            <button class="button" onclick="openLabel('ZWR00334%20Organic%20Dried%20Fruit%20Mix.HTML')">ZWR00334 Organic Dried Fruit Mix</button>
-            <button class="button" onclick="openLabel('ZWR00335%20Organic%20Walnut%20Halves.HTML')">ZWR00335 Organic Walnut Halves</button>
-            <button class="button" onclick="openLabel('ZWR00336%20Organic%20Sultanas.HTML')">ZWR00336 Organic Sultanas</button>
-            <button class="button" onclick="openLabel('ZWR00337%20Organic%20Green%20Peas.HTML')">ZWR00337 Organic Green Peas</button>
-            <button class="button" onclick="openLabel('ZWR00338%20Organic%20Red%20Kidney%20Beans.HTML')">ZWR00338 Organic Red Kidney Beans</button>
-            <button class="button" onclick="openLabel('ZWR00339%20Organic%20Broad%20Beans.HTML')">ZWR00339 Organic Broad Beans</button>
-            <button class="button" onclick="openLabel('ZWR00340%20Organic%20Soy%20Beans.HTML')">ZWR00340 Organic Soy Beans</button>
-            <button class="button" onclick="openLabel('ZWR00341%20Organic%20Peeled%20Tomatoes.HTML')">ZWR00341 Organic Peeled Tomatoes</button>
-            <button class="button" onclick="openLabel('ZWR00342%20Organic%20Tomato%20Puree.HTML')">ZWR00342 Organic Tomato Puree</button>
-            <button class="button" onclick="openLabel('ZWR00343%20Organic%20Sweet%20Chilli%20Sauce.HTML')">ZWR00343 Organic Sweet Chilli Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00344%20Organic%20Salsa.HTML')">ZWR00344 Organic Salsa</button>
-            <button class="button" onclick="openLabel('ZWR00345%20Organic%20Mango%20Chutney.HTML')">ZWR00345 Organic Mango Chutney</button>
-            <button class="button" onclick="openLabel('ZWR00346%20Organic%20Sweet%20Chilli%20Dipping%20Sauce.HTML')">ZWR00346 Organic Sweet Chilli Dipping Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00347%20Organic%20Thai%20Chilli%20Sauce.HTML')">ZWR00347 Organic Thai Chilli Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00348%20Organic%20Soy%20Sauce.HTML')">ZWR00348 Organic Soy Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00349%20Organic%20Red%20Curry%20Paste.HTML')">ZWR00349 Organic Red Curry Paste</button>
-            <button class="button" onclick="openLabel('ZWR00350%20Organic%20Green%20Curry%20Paste.HTML')">ZWR00350 Organic Green Curry Paste</button>
-            <button class="button" onclick="openLabel('ZWR00351%20Organic%20Sundried%20Tomatoes.HTML')">ZWR00351 Organic Sundried Tomatoes</button>
-            <button class="button" onclick="openLabel('ZWR00352%20Organic%20Pasta%20Sauce%20with%20Basil.HTML')">ZWR00352 Organic Pasta Sauce with Basil</button>
-            <button class="button" onclick="openLabel('ZWR00353%20Organic%20Pasta%20Sauce%20with%20Tomato.HTML')">ZWR00353 Organic Pasta Sauce with Tomato</button>
-            <button class="button" onclick="openLabel('ZWR00354%20Organic%20Pasta%20Sauce%20with%20Chilli.HTML')">ZWR00354 Organic Pasta Sauce with Chilli</button>
-            <button class="button" onclick="openLabel('ZWR00355%20Organic%20Pasta%20Sauce%20with%20Garlic.HTML')">ZWR00355 Organic Pasta Sauce with Garlic</button>
-            <button class="button" onclick="openLabel('ZWR00356%20Organic%20Pasta%20Sauce%20with%20Mushroom.HTML')">ZWR00356 Organic Pasta Sauce with Mushroom</button>
-            <button class="button" onclick="openLabel('ZWR00357%20Organic%20Pasta%20Sauce%20with%20Oregano.HTML')">ZWR00357 Organic Pasta Sauce with Oregano</button>
-            <button class="button" onclick="openLabel('ZWR00358%20Organic%20Pasta%20Sauce%20with%20Coriander.HTML')">ZWR00358 Organic Pasta Sauce with Coriander</button>
-            <button class="button" onclick="openLabel('ZWR00359%20Organic%20Pasta%20Sauce%20with%20Rosemary.HTML')">ZWR00359 Organic Pasta Sauce with Rosemary</button>
-            <button class="button" onclick="openLabel('ZWR00360%20Organic%20Squeezy%20Chilli%20Sauce.HTML')">ZWR00360 Organic Squeezy Chilli Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00361%20Organic%20Squeezy%20Garlic%20Sauce.HTML')">ZWR00361 Organic Squeezy Garlic Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00362%20Organic%20Squeezy%20Tandoori%20Sauce.HTML')">ZWR00362 Organic Squeezy Tandoori Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00363%20Organic%20Squeezy%20Tikka%20Sauce.HTML')">ZWR00363 Organic Squeezy Tikka Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00364%20Organic%20Squeezy%20Chilli%20Garlic%20Sauce.HTML')">ZWR00364 Organic Squeezy Chilli Garlic Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00365%20Organic%20Squeezy%20Sweet%20Chilli%20Sauce.HTML')">ZWR00365 Organic Squeezy Sweet Chilli Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00366%20Organic%20Squeezy%20Korma%20Sauce.HTML')">ZWR00366 Organic Squeezy Korma Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00367%20Organic%20Squeezy%20Curry%20Sauce.HTML')">ZWR00367 Organic Squeezy Curry Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00368%20Organic%20Squeezy%20Pasta%20Sauce.HTML')">ZWR00368 Organic Squeezy Pasta Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00369%20Organic%20Squeezy%20Tikka%20Masala%20Sauce.HTML')">ZWR00369 Organic Squeezy Tikka Masala Sauce</button>
-            <button class="button" onclick="openLabel('ZWR00370%20Organic%20Squeezy%20Tandoori%20Masala%20Sauce.HTML')">ZWR00370 Organic Squeezy Tandoori Masala Sauce</button>
-        </div>
+        <button class="button" onclick="openLabel('ZWR00292%20Organic%20Arborio%20Rice.HTML')">ZWR00292 Organic Arborio Rice</button>
+        <button class="button" onclick="openLabel('ZWR00293%20Organic%20Wild%20Rice.HTML')">ZWR00293 Organic Wild Rice</button>
+        <button class="button" onclick="openLabel('ZWR00294%20Organic%20Jasmine%20Rice.HTML')">ZWR00294 Organic Jasmine Rice</button>
+        <button class="button" onclick="openLabel('ZWR00295%20Organic%20Orzo.HTML')">ZWR00295 Organic Orzo</button>
+        <button class="button" onclick="openLabel('ZWR00296%20Organic%20Raw%20Cane%20Sugar.HTML')">ZWR00296 Organic Raw Cane Sugar</button>
+        <button class="button" onclick="openLabel('ZWR00297%20Organic%20Coconut%20Sugar.HTML')">ZWR00297 Organic Coconut Sugar</button>
+        <button class="button" onclick="openLabel('ZWR00298%20Organic%20Desiccated%20Coconut.HTML')">ZWR00298 Organic Desiccated Coconut</button>
+        <button class="button" onclick="openLabel('ZWR00299%20Organic%20Caster%20Sugar.HTML')">ZWR00299 Organic Caster Sugar</button>
+        <button class="button" onclick="openLabel('ZWR00300%20Organic%20Demerara%20Sugar.HTML')">ZWR00300 Organic Demerara Sugar</button>
+        <button class="button" onclick="openLabel('ZWR00301%20Organic%20Cocoa%20Powder.HTML')">ZWR00301 Organic Cocoa Powder</button>
+        <button class="button" onclick="openLabel('ZWR00302%20Organic%20Pumpkin%20Seeds.HTML')">ZWR00302 Organic Pumpkin Seeds</button>
+        <button class="button" onclick="openLabel('ZWR00303%20Organic%20Chia%20Seeds.HTML')">ZWR00303 Organic Chia Seeds</button>
+        <button class="button" onclick="openLabel('ZWR00304%20Organic%20Prunes.HTML')">ZWR00304 Organic Prunes</button>
+        <button class="button" onclick="openLabel('ZWR00305%20Organic%20Banana%20Chips.HTML')">ZWR00305 Organic Banana Chips</button>
+        <button class="button" onclick="openLabel('ZWR00306%20Organic%20Cranberries.HTML')">ZWR00306 Organic Cranberries</button>
+        <button class="button" onclick="openLabel('ZWR00319%20Organic%20Whole%20Cashews.HTML')">ZWR00319 Organic Whole Cashews</button>
+        <button class="button" onclick="openLabel('ZWR00320%20Organic%20Red%20Lentils.HTML')">ZWR00320 Organic Red Lentils</button>
+        <button class="button" onclick="openLabel('ZWR00321%20Organic%20White%20Basmati%20Rice.HTML')">ZWR00321 Organic White Basmati Rice</button>
+        <button class="button" onclick="openLabel('ZWR00322%20Dark%20Chocolate%20Buttons%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00322 Dark Chocolate Buttons, Organic, Cocoa Loco, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00323%20Milk%20Chocolate%20Buttons%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00323 Milk Chocolate Buttons, Organic, Cocoa Loco, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00324%20Organic%20Quinoa.HTML')">ZWR00324 Organic Quinoa</button>
+        <button class="button" onclick="openLabel('ZWR00325%20Organic%20Raisins.HTML')">ZWR00325 Organic Raisins</button>
+        <button class="button" onclick="openLabel('ZWR00326%20Organic%20Pitted%20Dates.HTML')">ZWR00326 Organic Pitted Dates</button>
+        <button class="button" onclick="openLabel('ZWR00327%20Organic%20Chickpeas.HTML')">ZWR00327 Organic Chickpeas</button>
+        <button class="button" onclick="openLabel('ZWR00328%20Fibre%20Flakes%2C%20Organic%2C%20Doves%20Farm%20(325g).HTML')">ZWR00328 Fibre Flakes, Organic, Doves Farm (325g)</button>
+        <button class="button" onclick="openLabel('ZWR00329%20Cornflakes%2C%20Organic%2C%20Doves%20Farm%20(325g).HTML')">ZWR00329 Cornflakes, Organic, Doves Farm (325g)</button>
+        <button class="button" onclick="openLabel('ZWR00330%20Chocolate%20Stars%2C%20Organic%2C%20Doves%20Farm%20(275g).HTML')">ZWR00330 Chocolate Stars, Organic, Doves Farm (275g)</button>
+        <button class="button" onclick="openLabel('ZWR00331%20Organic%20Brown%20Basmati%20Rice.HTML')">ZWR00331 Organic Brown Basmati Rice</button>
+        <button class="button" onclick="openLabel('ZWR00332%20Organic%20Green%20Lentils.HTML')">ZWR00332 Organic Green Lentils</button>
+        <button class="button" onclick="openLabel('ZWR00333%20Organic%20Butter%20Beans.HTML')">ZWR00333 Organic Butter Beans</button>
+        <button class="button" onclick="openLabel('ZWR00334%20Organic%20Dried%20Fruit%20Mix.HTML')">ZWR00334 Organic Dried Fruit Mix</button>
+        <button class="button" onclick="openLabel('ZWR00335%20Organic%20Walnut%20Halves.HTML')">ZWR00335 Organic Walnut Halves</button>
+        <button class="button" onclick="openLabel('ZWR00336%20Organic%20Pine%20Nuts.HTML')">ZWR00336 Organic Pine Nuts</button>
+        <button class="button" onclick="openLabel('ZWR00337%20Organic%20Penne%20Pasta.HTML')">ZWR00337 Organic Penne Pasta</button>
+        <button class="button" onclick="openLabel('ZWR00338%20Organic%20Whole%20Wheat%20Penne.HTML')">ZWR00338 Organic Whole Wheat Penne</button>
+        <button class="button" onclick="openLabel('ZWR00339%20Organic%20Whole%20Wheat%20Couscous.HTML')">ZWR00339 Organic Whole Wheat Couscous</button>
+        <button class="button" onclick="openLabel('ZWR00340%20Organic%20Hazelnuts.HTML')">ZWR00340 Organic Hazelnuts</button>
+        <button class="button" onclick="openLabel('ZWR00341%20Organic%20Popping%20Corn.HTML')">ZWR00341 Organic Popping Corn</button>
+        <button class="button" onclick="openLabel('ZWR00342%20Porridge%20Oats%2C%20Organic%2C%20Pimhill%2C%20(600g).HTML')">ZWR00342 Porridge Oats, Organic, Pimhill, (600g)</button>
+        <button class="button" onclick="openLabel('ZWR00343%20Jumbo%20Oats%2C%20Organic%2C%20Pimhill%2C%20(600g).HTML')">ZWR00343 Jumbo Oats, Organic, Pimhill, (600g)</button>
+        <button class="button" onclick="openLabel('ZWR00344%20Organic%20Brazil%20Nuts.HTML')">ZWR00344 Organic Brazil Nuts</button>
+        <button class="button" onclick="openLabel('ZWR00345%20Muesli%2C%20Organic%2C%20Pimhill%2C%20(600g).HTML')">ZWR00345 Muesli, Organic, Pimhill, (600g)</button>
+        <button class="button" onclick="openLabel('ZWR00346%20Organic%20Dried%20Apricots.HTML')">ZWR00346 Organic Dried Apricots</button>
+        <button class="button" onclick="openLabel('ZWR00347%20Organic%20Dried%20Figs.HTML')">ZWR00347 Organic Dried Figs</button>
+        <button class="button" onclick="openLabel('ZWR00352%20Organic%20Almonds.HTML')">ZWR00352 Organic Almonds</button>
+        <button class="button" onclick="openLabel('ZWR00353%20Organic%20Wholewheat%20Fusilli.HTML')">ZWR00353 Organic Wholewheat Fusilli</button>
+        <button class="button" onclick="openLabel('ZWR00354%20Organic%20Fusilli.HTML')">ZWR00354 Organic Fusilli</button>
+        <button class="button" onclick="openLabel('ZWR00355%20Dark%20Chocolate%20Buttons%2056%25%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00355 Dark Chocolate Buttons 56%, Organic, Cocoa Loco, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00356%20Dark%20Chocolate%20D%26D%27s%2C%20Doisy%20%26%20Dam%2C%20(250g).HTML')">ZWR00356 Dark Chocolate D&D's, Doisy & Dam, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00357%20White%20Chocolate%20Buttons%2C%20Organic%2C%20Cocoa%20Loco%2C%20(250g).HTML')">ZWR00357 White Chocolate Buttons, Organic, Cocoa Loco, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00358%20Chocolate%20Peanut%20D%26Ds.HTML')">ZWR00358 Chocolate Peanut D&Ds</button>
+        <button class="button" onclick="openLabel('ZWR00359%20Peanut%20%26%20Salted%20Caramel%20Dark%20Chocolate%20Clusters%2C%20B-Corp%2C%20Doisy%20%26%20Dam%2C%20(250g).HTML')">ZWR00359 Peanut & Salted Caramel Dark Chocolate Clusters, B-Corp, Doisy & Dam, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00360%20Organic%20Mixed%20Nuts.HTML')">ZWR00360 Organic Mixed Nuts</button>
+        <button class="button" onclick="openLabel('ZWR00361%20Organic%20Omega%20Seed%20Mix.HTML')">ZWR00361 Organic Omega Seed Mix.HTML</button>
+        <button class="button" onclick="openLabel('ZWR00362%20Organic%20Sunflower%20Seeds.HTML')">ZWR00362 Organic Sunflower Seeds</button>
+        <button class="button" onclick="openLabel('ZWR00363%20Organic%20Sultanas.HTML')">ZWR00363 Organic Sultanas</button>
+        <button class="button" onclick="openLabel('ZWR00364%20Organic%20Ground%20Almonds.HTML')">ZWR00364 Organic Ground Almonds</button>
+        <button class="button" onclick="openLabel('ZWR00365%20Organic%20Golden%20Linseed.HTML')">ZWR00365 Organic Golden Linseed</button>
+        <button class="button" onclick="openLabel('ZWR00366%20Organic%20Dried%20Mango.HTML')">ZWR00366 Organic Dried Mango</button>
+        <button class="button" onclick="openLabel('ZWR00367%20Cinnamon%2C%20Organic%2C%20Steenbergs%2C%20(60g).HTML')">ZWR00367 Cinnamon, Organic, Steenbergs, (60g)</button>
+        <button class="button" onclick="openLabel('ZWR00368%20Black%20Peppercorns%2C%20Organic%2C%20Steenbergs%2C%20(100g).HTML')">ZWR00368 Black Peppercorns, Organic, Steenbergs, (100g)</button>
+        <button class="button" onclick="openLabel('ZWR00369%20Smoked%20Paprika%2C%20Organic%2C%20Steenbergs%2C%20(60g).HTML')">ZWR00369 Smoked Paprika, Organic, Steenbergs, (60g)</button>
+        <button class="button" onclick="openLabel('ZWR00370%20Cumin%2C%20Organic%2C%20Steenbergs%2C%20(60g).HTML')">ZWR00370 Cumin, Organic, Steenbergs, (60g)</button>
+        <button class="button" onclick="openLabel('ZWR00371%20Oregano%2C%20Organic%2C%20Steenbergs%2C%20(30g).HTML')">ZWR00371 Oregano, Organic, Steenbergs, (30g)</button>
+        <button class="button" onclick="openLabel('ZWR00376%20Organic%20Brazil%20Nuts.HTML')">ZWR00376 Organic Brazil Nuts</button>
+        <button class="button" onclick="openLabel('ZWR00377%20Salt%20%26%20Pepper%20Cashew%20Nuts%2C%20B-Corp%2C%20Belazu%2C%20(175g).HTML')">ZWR00377 Salt & Pepper Cashew Nuts, B-Corp, Belazu, (175g)</button>
+        <button class="button" onclick="openLabel('ZWR00378%20Tomato%20and%20Smoked%20Paprika%20Picos%20(75g).HTML')">ZWR00378 Tomato and Smoked Paprika Picos (75g)</button>
+        <button class="button" onclick="openLabel('ZWR00379%20Spicy%20Snack%20Mix%2C%20B-Corp%2C%20Belazu%2C%20(150g).HTML')">ZWR00379 Spicy Snack Mix, B-Corp, Belazu, (150g)</button>
+        <button class="button" onclick="openLabel('ZWR00380%20Dry%20Roasted%20Peanuts%2C%20B-Corp%2C%20Belazu%2C%20(250g).HTML')">ZWR00380 Dry Roasted Peanuts, B-Corp, Belazu, (250g)</button>
+        <button class="button" onclick="openLabel('ZWR00381%20Wasabi%20Peas%2C%20B-Corp%2C%20Belazu%2C%20(125g).HTML')">ZWR00381 Wasabi Peas, B-Corp, Belazu, (125g)</button>
+        <button class="button" onclick="openLabel('ZWR00382%20Organic%20White%20Fusilli%20Pasta.HTML')">ZWR00382 Organic White Fusilli Pasta</button>
+        <button class="button" onclick="openLabel('ZWR00383%20Organic%20Wholewheat%20Fusilli.HTML')">ZWR00383 Organic Wholewheat Fusilli</button>
+        <button class="button" onclick="openLabel('ZWR00384%20Organic%20White%20Penne%20Pasta.HTML')">ZWR00384 Organic White Penne Pasta</button>
+        <button class="button" onclick="openLabel('ZWR00385%20Organic%20Wholewheat%20Penne%20Pasta.HTML')">ZWR00385 Organic Wholewheat Penne Pasta</button>
+        <button class="button" onclick="openLabel('ZWR00386%20Organic%20Gnochetti%20Pasta.HTML')">ZWR00386 Organic Gnochetti Pasta</button>
+        <button class="button" onclick="openLabel('ZWR00395%20Cracked%20Freekeh.HTML')">ZWR00395 Cracked Freekeh</button>
+        <button class="button" onclick="openLabel('ZWR00396%20Organic%20Apricot%2C%20Fig%20%26%20Seed%20Muesli.HTML')">ZWR00396 Organic Apricot, Fig & Seed Muesli</button>
+        <button class="button" onclick="openLabel('ZWR00397%20Organic%20Nutty%20Granola.HTML')">ZWR00397 Organic Nutty Granola</button>
+        
     </main>
+
+    <script>
+        function openLabel(labelFile) {
+            // Open the selected label page
+            window.open(labelFile, '_self');
+        }
+    </script>
 </body>
 </html>
