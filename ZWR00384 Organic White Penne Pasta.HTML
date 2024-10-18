@@ -70,6 +70,20 @@
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
             margin: 0; /* Remove default margin for consistency */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -91,11 +105,12 @@
                         </p>
                         <p>
                             <strong>Best before:</strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
                         <p>
                             <strong>Batch no:</strong>
-                            <span>ZWR00384-5573</span>
+                            <span>ZWR00384-</span>
+                            <input type="text" id="batchNoLast4" value="5573" maxlength="4">
                         </p>
                     </div>
                 </div>
