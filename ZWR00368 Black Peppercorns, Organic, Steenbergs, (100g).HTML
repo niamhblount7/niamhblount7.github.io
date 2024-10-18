@@ -69,6 +69,20 @@
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +91,7 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Black Peppercorns, Organic, Steenbergs, (100g)</h1>
-                    <p>Ingredients: Black pepper* *Product of Organic Agriculture .</p>
+                    <p>Ingredients: Black pepper* *Product of Organic Agriculture.</p>
 
                     <div class="grid">
                         <p>
@@ -85,7 +99,7 @@
                             <span>100g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p>
@@ -93,7 +107,8 @@
                             <span>LO066</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span>ZWR00368-5041</span>
+                            <span>ZWR00368-</span>
+                            <input type="text" id="batchNoLast4" value="5041" maxlength="4">
                         </p>
                     </div>
                 </div>
