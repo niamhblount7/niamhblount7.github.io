@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -35,39 +33,54 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0; /* No gap between items in the grid */
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
     </style>
 </head>
@@ -77,23 +90,23 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Organic White Fusilli Pasta</h1>
-                    <p>Ingredients: Organic* Durum <strongWHEAT</strong> semolina. Typical values per 100g Energy: 358 kcal / 1516 kJ Fat: 1.5g of which saturates: 0.3g Carbohydrate: 73.0g of which sugars: 3g Proteins: 11.5g Salt: 0.05g</p>
+                    <p>Ingredients: Organic* Durum <strong>WHEAT</strong> semolina. Typical values per 100g Energy: 358 kcal / 1516 kJ Fat: 1.5g of which saturates: 0.3g Carbohydrate: 73.0g of which sugars: 3g Proteins: 11.5g Salt: 0.05g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>500g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO003</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00382-5572</span>
+                        <p class="inline">
+                            <strong>Best before:</strong><span> 28-Feb-25</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO003</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong><span> ZWR00382-5572</span>
                         </p>
                     </div>
                 </div>
