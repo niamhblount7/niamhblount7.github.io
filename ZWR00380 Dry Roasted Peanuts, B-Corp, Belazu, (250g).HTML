@@ -41,19 +41,19 @@
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
@@ -61,21 +61,26 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 0; /* No gap between items in the grid */
             margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            display: flex; /* Use flexbox for inline alignment */
-            align-items: center; /* Center items vertically */
-            margin: 0; /* Remove default margin */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
         }
 
         /* Inline spacing and centering */
         .inline {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
@@ -107,7 +112,7 @@
                         </p>
 
                         <p class="inline">
-                            <strong>Best before:</strong> <span>28-Feb-25</span>
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p class="inline">
