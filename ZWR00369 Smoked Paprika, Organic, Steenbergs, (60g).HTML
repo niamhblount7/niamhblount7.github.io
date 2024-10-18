@@ -139,7 +139,7 @@
         
         p {
             font-size: 0.59rem; /* Reduced font size */
-            margin: 1; /* Remove default margin */
+            margin: 0; /* Remove default margin */
             line-height: 1.2; /* Adjust line height for fitting */
         }
         
@@ -147,20 +147,46 @@
             font-weight: 500;
         }
         
-        .footer {
-            font-size: 0.9rem; /* Reduced font size */
-            line-height: 1.2; /* Adjust line height for fitting */
-        }
-        
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            font-size: 0.5rem; /* Reduce font size */
+            margin-top: 5mm; /* Moves the entire grid down */
+            font-size: 0.7rem; /* Adjusted font size */
             line-height: 1; /* Adjust line height for fitting */
         }
+
         .grid p {
-    font-size: 0.7rem; /* Adjusted font size for the net weight and other details */
-}
+            font-size: 0.7rem; /* Adjusted font size for the net weight and other details */
+            display: flex;
+            align-items: center;
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -168,29 +194,26 @@
         <div class="label-bleed">
             <div class="label-contents">
                 <div style="font-family: Stag;">
-                   <div class="text-[0.55rem] leading-snug"> 
-
                     <h1>Smoked Paprika, Organic, Steenbergs, (60g)</h1>
-                    <p class="font-normal mb=[0.2rem]"
-                    <p> Ingredients: Organic Paprika, smoked </p>
-
-                  
+                    <p>Ingredients: Organic Paprika, smoked.</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>60g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>11-Nov-99</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 60g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO056</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR003ZZ-6666</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO056</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="11-Nov-99">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR003ZZ-</span>
+                            <input type="text" id="batchNoLast4" value="6666" maxlength="4">
                         </p>
                     </div>
                 </div>
