@@ -24,17 +24,20 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm 0; /* Top and bottom padding */
+            padding: 0mm; /* Remove padding to utilize full height */
+            display: flex;
+            align-items: center;
         }
         
         .label-contents {
             width: 95mm;
-            height: 100%; /* Full height of the container */
-            padding-left: 7mm; /* Adjust padding */
+            height: 100%; /* Ensure full height */
+            padding-left: 7mm;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Evenly spaces the content */
-            page-break-inside: avoid;
+            justify-content: space-between; /* Space out the content evenly */
+            align-items: flex-start; /* Align content to the start */
+            box-sizing: border-box; /* Ensure padding is included in the element's dimensions */
         }
         
         h1 {
@@ -55,6 +58,7 @@
         }
         
         .grid {
+            width: 100%; /* Make grid full width */
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
