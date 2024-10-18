@@ -82,6 +82,20 @@
         .inline strong::after {
             content: "\00A0"; /* Unicode for non-breaking space */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -94,19 +108,21 @@
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg.</p>
                     <div class="grid">
                         <p class="inline">
-                            <strong>Net weight:</strong><span> 500g</span>
-                        </p>
-
-                        <p class="inline">
-                            <strong>Best before:</strong><span> 28-Feb-25</span>
-                        </p>
-
-                        <p class="inline">
                             <strong>Stock item code:</strong><span> LO003</span>
                         </p>
 
                         <p class="inline">
-                            <strong>Batch no:</strong><span> ZWR00382-5572</span>
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00382-</span>
+                            <input type="text" id="batchNoLast4" value="5572" maxlength="4">
                         </p>
                     </div>
                 </div>
