@@ -11,91 +11,95 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
-            margin-top: 0 !important;
+            padding: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 1mm 2mm 0 2mm;
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm;
-            padding-top: 5mm;
+            padding-left: 3mm;
+            padding-top: 0;
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
+            line-height: 1;
         }
-        
+
         p {
             font-size: 0.59rem;
             margin: 0;
-            line-height: 1.2;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
-        
+
         strong {
             font-weight: 500;
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
-            margin-top: 5mm;
+            margin-top: 0;
             font-size: 0.7rem;
         }
-        
+
         .grid p {
             font-size: 0.7rem;
+            margin: 0;
             display: flex;
             align-items: center;
-            margin: 0;
+            padding: 0;
         }
 
-        /* Inline spacing and centering */
-        .inline {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        /* Add exactly one space */
-        .inline strong::after {
-            content: "\00A0"; /* Unicode for non-breaking space */
-        }
-
-        /* Editable input styling */
         input[type="text"] {
             font-family: Stag;
             font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: auto;
+            width: 50px;
             padding: 0;
+            margin-left: 2px;
         }
 
         input[type="text"]:focus {
             outline: none;
         }
+
+        .flex-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .grid span {
+            margin-left: 4px;
+        }
+
     </style>
 </head>
 <body>
@@ -103,27 +107,31 @@
         <div class="label-bleed">
             <div class="label-contents">
                 <div style="font-family: Stag;">
-                    <h1>Tomato and Smoked Paprika Picos (75g)</h1>
-                    <p>Ingredients: Picos (<strong>WHEAT</strong> flour, water, salt ,yeast, emulsifier: diacetyltartaric acid esters of mono- and diglycerides) sun-dried tomato paste (rehydrated tomatoes, vegetable oils (sunflower and rapeseed oil in varying proportions), salt, glucose syrup (<strong>SULPHITES</strong>), salt, paprika flakes, sweet smoked paprika, dried oregano.. Typical values per 100g Energy: 1546kJ/367kcal Fat: 8.2g Of which saturates: 1.2g Carbohydrates: 63g Of which sugars: 8.8g Fibre: 1.7g Protein: 8g Salt: 4g</p>
-                    <p>For allergens please see ingredients in <strong>bold</strong>. May contain traces of Lupine, Soy, Milk, Mustard, Tree Nuts, Sesame, and Peanuts. Made in a factory that handles Celery and Egg.</p>
+                    <h1>Dark Chocolate D&D's, Doisy & Dam, (250g)</h1>
+                    <p>Ingredients: Dark chocolate (sugar, cocoa mass, cocoa butter, natural vanilla flavouring, emulsifier (<strong>SOYA</strong> lecithin)) (60%), sugar (35%), thickener (gum Arabic), colours (calcium carbonate, calcium sulphate, beetroot extract, annatto extract, curcumin, chlorophyll), tapioca dextrin, natural vanilla flavouring, glazing agent (carnauba wax), dried glucose syrup. Cocoa Solids: 50% minimum. Typical values per 100g Energy: 463 kcal / 1941 kJ Fat: 18.0g of which saturates: 11.0g Carbohydrate: 67.0g of which sugars: 65.0g Fibre: 7.1g Proteins: 3.3g Salt: 0.10g</p>
+                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
 
                     <div class="grid">
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 75g</span>
+                        <p>
+                            <strong>Net weight: </strong>
+                            <span>250g</span>
                         </p>
 
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> LO075</span>
+                        <p>
+                            <strong>Stock item code: </strong>
+                            <span>LO055</span>
                         </p>
 
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
-                        </p>
-
-                        <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00378-</span>
-                            <input type="text" id="batchNoLast4" value="4965" maxlength="4">
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25">
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00356-</span>
+                                <input type="text" id="batchNoLast4" value="5557" maxlength="4">
+                            </div>
                         </p>
                     </div>
                 </div>
