@@ -61,13 +61,35 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Space between items in the grid set to 0 for uniformity */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            margin: 0; /* Remove default margin for consistency */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
+
+        /* Inline alignment for batch and best before */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -83,17 +105,19 @@
                         <p>
                             <strong>Net weight: </strong>
                             <span>500g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
                         </p>
-
                         <p>
                             <strong>Stock item code: </strong>
                             <span>LO027</span>
-                            <br>
+                        </p>
+                        <p class="inline">
+                            <strong>Best before: </strong>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+                        <p class="inline">
                             <strong>Batch no: </strong>
-                            <span>ZWR00385-5551</span>
+                            <span>ZWR00385-</span>
+                            <input type="text" id="batchNoLast4" value="5551" maxlength="4">
                         </p>
                     </div>
                 </div>
