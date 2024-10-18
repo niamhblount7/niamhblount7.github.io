@@ -25,31 +25,33 @@
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 3mm;
-            padding-top: 0;
-            padding-bottom: 0;
+            padding: 1mm 2mm 0 2mm; /* Minimal padding */
         }
 
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust to match the required layout */
-            padding-top: 5mm;
+            padding-left: 3mm; /* Reduced left padding */
+            padding-top: 0;   /* Removed top padding */
             overflow: hidden;
             page-break-inside: avoid;
         }
 
         h1 {
             font-family: Stag;
-            font-size: 0.95rem;
+            font-size: 0.95rem; /* Title font size */
             font-weight: normal;
             margin: 0;
+            line-height: 1; /* Compact line height */
         }
 
         p {
-            font-size: 0.59rem;
+            font-size: 0.59rem; /* Ingredients font size */
             margin: 0;
-            line-height: 1.2;
+            line-height: 1;
+            white-space: normal;
+            overflow-wrap: break-word;
+            display: block;
         }
 
         strong {
@@ -58,29 +60,18 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0; /* Ensure no gap between items */
-            margin-top: 5mm; /* Match margin for consistent spacing */
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 0; /* No gap */
+            margin-top: 0; /* No margin */
             font-size: 0.7rem;
         }
 
         .grid p {
             font-size: 0.7rem;
-            display: flex;
-            align-items: center;
             margin: 0;
-        }
-
-        /* Inline spacing and centering */
-        .inline {
-            display: inline-flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        /* Add exactly one space */
-        .inline strong::after {
-            content: "\00A0"; /* Unicode for non-breaking space */
+            display: flex; /* Use flexbox for inline alignment */
+            align-items: center; /* Center items vertically */
+            padding: 0; /* Remove padding */
         }
 
         /* Editable input styling */
@@ -89,13 +80,29 @@
             font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            width: auto;
-            padding: 0;
+            width: 50px; /* Fixed width for input */
+            padding: 0; /* No padding */
+            margin-left: 2px; /* Space between label and input */
         }
 
         input[type="text"]:focus {
             outline: none;
         }
+
+        /* Flex container for Best Before and Batch No */
+        .flex-container {
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            align-items: center; /* Center items vertically */
+            margin-top: 0; /* Minimize vertical space */
+            width: 100%; /* Full width */
+        }
+
+        /* Adjusting margin for spans for spaces */
+        .grid span {
+            margin-left: 4px; /* Space equivalent to one bar press */
+        }
+
     </style>
 </head>
 <body>
@@ -108,24 +115,28 @@
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, Sesame, and Peanuts.</p>
                     <div class="grid">
                         <!-- Net weight in first column -->
-                        <p class="inline">
-                            <strong>Net weight:</strong><span> 250g</span>
+                        <p>
+                            <strong>Net weight: </strong>
+                            <span>250g</span>
                         </p>
 
                         <!-- Stock item code in second column -->
-                        <p class="inline">
-                            <strong>Stock item code:</strong><span> LO055</span>
+                        <p>
+                            <strong>Stock item code: </strong>
+                            <span>LO055</span>
                         </p>
 
                         <!-- Best before and Batch no container -->
-                        <p class="inline">
-                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Editable field -->
-                        </p>
-
-                        <p class="inline">
-                            <strong>Batch no:</strong>
-                            <span>ZWR00356-</span>
-                            <input type="text" id="batchNoLast4" value="5557" maxlength="4"> <!-- Editable field -->
+                        <p style="grid-column: span 2; margin-top: 2px;">
+                            <div class="flex-container">
+                                <strong>Best before: </strong>
+                                <input type="text" id="bestBefore" value="28-Feb-25"> <!-- Made editable -->
+                            </div>
+                            <div class="flex-container">
+                                <strong>Batch no: </strong>
+                                <span>ZWR00356-</span>
+                                <input type="text" id="batchNoLast4" value="5557" maxlength="4" style="margin-left: 0;"> <!-- Inline with the dash -->
+                            </div>
                         </p>
                     </div>
                 </div>
