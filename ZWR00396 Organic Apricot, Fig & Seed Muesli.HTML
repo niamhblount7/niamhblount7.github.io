@@ -69,6 +69,20 @@
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +91,7 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Organic Apricot, Fig & Seed Muesli</h1>
-                    <p>Ingredients: Organic Jumbo <strong>OATS</strong>, Organic Raisins, Organic <strong>BARLEY</strong> Flakes, Organic <strong>RYE</strong Flakes, Organic Porridge <strong>OATS</strong>, Organic Apricots, Organic Figs, Organic Apple, Organic Pumpkin Seeds, Organic Sunflower seeds. Nutritional Information per 100g Energy (kJ): 1530 Energy (kcal): 363 Fat (g): 9.2 of which saturates (g): 1.41 Carbohydrate (g): 56.4 of which sugars (g): 16.1 Protein (g): 9.09 Fibre (g): 9.3 Salt (g): 0.02</p>
+                    <p>Ingredients: Organic Jumbo <strong>OATS</strong>, Organic Raisins, Organic <strong>BARLEY</strong> Flakes, Organic <strong>RYE</strong> Flakes, Organic Porridge <strong>OATS</strong>, Organic Apricots, Organic Figs, Organic Apple, Organic Pumpkin Seeds, Organic Sunflower seeds. Nutritional Information per 100g Energy (kJ): 1530 Energy (kcal): 363 Fat (g): 9.2 of which saturates (g): 1.41 Carbohydrate (g): 56.4 of which sugars (g): 16.1 Protein (g): 9.09 Fibre (g): 9.3 Salt (g): 0.02</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts and Sesame.</p>
                     <div class="grid">
                         <p>
@@ -85,15 +99,14 @@
                             <span>600g</span>
                             <br>
                             <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
-
                         <p>
                             <strong>Stock item code: </strong>
                             <span>ZWR00396</span>
                             <br>
                             <strong>Batch no: </strong>
-                            <span>ZWR00396-5523</span>
+                            <input type="text" id="batchNo" value="ZWR00396-5523">
                         </p>
                     </div>
                 </div>
