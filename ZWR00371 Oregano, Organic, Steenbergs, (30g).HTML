@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -35,40 +33,42 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0; /* No gap between items */
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
-            margin: 0; /* Remove default margin */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center; /* Align items vertically */
+            margin: 0;
         }
 
         /* Inline spacing and centering */
@@ -83,11 +83,19 @@
             content: "\00A0"; /* Unicode for non-breaking space */
         }
 
-        /* Editable styles */
-        .editable {
-            border-bottom: 1px dashed #000; /* Visual cue for editable fields */
-            padding: 0 2px; /* Slight padding for readability */
-            min-width: 50px; /* Minimum width for editable fields */
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto; /* Allow auto width */
+            padding: 0; /* No padding for inputs */
+            min-width: 50px; /* Minimum width for input fields */
+        }
+
+        input[type="text"]:focus {
+            outline: none; /* Remove outline on focus */
         }
     </style>
 </head>
@@ -101,22 +109,22 @@
 
                     <div class="grid">
                         <p class="inline">
-                            <strong>Net weight:</strong> <span>30g</span>
+                            <strong>Net weight:</strong><span> 30g</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO069</span>
                         </p>
 
                         <p class="inline">
                             <strong>Best before:</strong> 
-                            <span class="editable" contenteditable="true">28-Feb-25</span>
+                            <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p class="inline">
-                            <strong>Stock item code:</strong> <span>LO069</span>
-                        </p>
-
-                        <p class="inline">
-                            <strong>Batch no:</strong> 
+                            <strong>Batch no:</strong>
                             <span>ZWR00371-</span>
-                            <span class="editable" contenteditable="true">5555</span>
+                            <input type="text" id="batchNoLast4" value="5555" maxlength="4">
                         </p>
                     </div>
                 </div>
