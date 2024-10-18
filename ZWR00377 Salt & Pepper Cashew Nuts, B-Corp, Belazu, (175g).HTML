@@ -82,6 +82,21 @@
         .inline strong::after {
             content: "\00A0"; /* Unicode for non-breaking space */
         }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+            margin-left: 4px; /* Space between label and input */
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -102,11 +117,13 @@
                         </p>
 
                         <p class="inline">
-                            <strong>Best before:</strong> <span>28-Feb-25</span>
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
                         </p>
 
                         <p class="inline">
-                            <strong>Batch no:</strong><span> ZWR00377-4686</span>
+                            <strong>Batch no:</strong>
+                            <span>ZWR00377-</span>
+                            <input type="text" id="batchNoLast4" value="4686" maxlength="4">
                         </p>
                     </div>
                 </div>
