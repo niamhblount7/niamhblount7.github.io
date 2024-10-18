@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -61,13 +59,42 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* Match the other label with no gaps */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center; /* Align items vertically */
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -77,23 +104,26 @@
             <div class="label-contents">
                 <div style="font-family: Stag;">
                     <h1>Organic Mixed Nuts</h1>
-                    <p>Ingredients: Organic Whole <strong>BRAZIL Nuts*</strong>, Organic </strong>HAZELNUTS*</strong>, Organic Whole <strong>CASHEWS*</strong>, Organic <strong>ALMONDS*</strong>, Organic <strong>WALNUT Pieces*</strong>. * Organically certified ingredient . Typical values per 100g Energy: 635 kcal / 2638 kJ Fat: 60.6g of which saturates: 9.6g Carbohydrate: 11.8g of which sugars: 3.7g Fibre: 5.2g Proteins: 16.1g Salt: 0.0g</p>
-                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts and Sesame.</p>
+                    <p>Ingredients: Organic Whole <strong>BRAZIL Nuts*</strong>, Organic <strong>HAZELNUTS*</strong>, Organic Whole <strong>CASHEWS*</strong>, Organic <strong>ALMONDS*</strong>, Organic <strong>WALNUT Pieces*</strong>. * Organically certified ingredient. Typical values per 100g Energy: 635 kcal / 2638 kJ Fat: 60.6g of which saturates: 9.6g Carbohydrate: 11.8g of which sugars: 3.7g Fibre: 5.2g Proteins: 16.1g Salt: 0.0g</p>
+                    <p>For allergens please see ingredients in <strong>bold</strong>. Produced in a factory that handles Soy, Gluten, Milk, Mustard, Celery, Egg, Tree Nuts, and Sesame.</p>
+
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>250g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 250g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO058</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00360-5466</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO058</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00360-</span>
+                            <input type="text" id="batchNoLast4" value="5466" maxlength="4">
                         </p>
                     </div>
                 </div>
