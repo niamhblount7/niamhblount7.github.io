@@ -5,7 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
+        @font-face {
+            font-family: "Stag Black Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black%20Italic.ttf") format("truetype");
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Black";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Black.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Stag Bold Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Bold%20Italic.ttf") format("truetype");
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Bold";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Bold.ttf") format("truetype");
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Stag Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Italic.ttf") format("truetype");
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Light Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Light%20Italic.ttf") format("truetype");
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Light";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Light.ttf") format("truetype");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Stag Medium Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Medium%20Italic.ttf") format("truetype");
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Medium";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Medium.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Stag SemiBold Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20SemiBold%20Italic.ttf") format("truetype");
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag SemiBold";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20SemiBold.ttf") format("truetype");
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Stag Thin Italic";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Thin%20Italic.ttf") format("truetype");
+            font-weight: 100;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: "Stag Thin";
+            src: url("https://raw.githubusercontent.com/niamhblount7/fonts/main/Stag%20Thin.ttf") format("truetype");
+            font-weight: 100;
+            font-style: normal;
+        }
 
         @media print {
             @page {
@@ -13,17 +102,17 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
             margin-top: 0 !important;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
@@ -31,7 +120,7 @@
             padding-top: 0;
             padding-bottom: 0;
         }
-        
+
         .label-contents {
             width: 95mm;
             height: 38mm;
@@ -40,24 +129,24 @@
             overflow: hidden;
             page-break-inside: avoid;
         }
-        
+
         h1 {
             font-family: Stag;
             font-size: 0.95rem; /* Keep this size for the title */
             font-weight: normal;
             margin: 0; /* Remove default margin */
         }
-        
+
         p {
             font-size: 0.59rem; /* Keep this size for the ingredients */
             margin: 0; /* Remove default margin */
             line-height: 1.2; /* Adjust line height for fitting */
         }
-        
+
         strong {
             font-weight: 500; /* Bold for strong text */
         }
-        
+
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -65,9 +154,23 @@
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
-        
+
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -80,20 +183,22 @@
                     <p>Ingredients: Cumin* *Product of Organic Agriculture.</p>
 
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>60g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 60g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO068</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00370-5191</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO068</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00370-</span>
+                            <input type="text" id="batchNoLast4" value="5191" maxlength="4">
                         </p>
                     </div>
                 </div>
