@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -61,13 +59,16 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
+            gap: 0; /* No gap between items */
             margin-top: 5mm; /* Moves the entire grid down */
             font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
         }
         
         .grid p {
             font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            display: flex;
+            align-items: center; /* Align items vertically */
+            margin: 0;
         }
     </style>
 </head>
@@ -83,17 +84,22 @@
                         <p>
                             <strong>Net weight: </strong>
                             <span>250g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
                         </p>
 
                         <p>
                             <strong>Stock item code: </strong>
                             <span>ZWR00376</span>
-                            <br>
+                        </p>
+
+                        <p>
+                            <strong>Best before: </strong>
+                            <input type="text" id="bestBefore" value="28-Feb-25" style="border:none; background-color:transparent; width:auto; min-width:50px; font-size:0.7rem;">
+                        </p>
+
+                        <p>
                             <strong>Batch no: </strong>
-                            <span>ZWR00376-PF24</span>
+                            <span>ZWR00376-</span>
+                            <input type="text" id="batchNoLast4" value="PF24" maxlength="4" style="border:none; background-color:transparent; width:auto; min-width:50px; font-size:0.7rem;">
                         </p>
                     </div>
                 </div>
