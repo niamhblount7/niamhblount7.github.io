@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
     <style>
-        /* Font-face definitions here... */
-
         @media print {
             @page {
                 size: 100mm 40mm;
@@ -35,39 +33,68 @@
         .label-contents {
             width: 95mm;
             height: 38mm;
-            padding-left: 7mm; /* Adjust padding */
-            padding-top: 5mm;   /* Adjust top padding */
+            padding-left: 7mm;
+            padding-top: 5mm;
             overflow: hidden;
             page-break-inside: avoid;
         }
         
         h1 {
             font-family: Stag;
-            font-size: 0.95rem; /* Keep this size for the title */
+            font-size: 0.95rem;
             font-weight: normal;
-            margin: 0; /* Remove default margin */
+            margin: 0;
         }
         
         p {
-            font-size: 0.59rem; /* Keep this size for the ingredients */
-            margin: 0; /* Remove default margin */
-            line-height: 1.2; /* Adjust line height for fitting */
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
         
         strong {
-            font-weight: 500; /* Bold for strong text */
+            font-weight: 500;
         }
         
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 5mm; /* Space between items in the grid */
-            margin-top: 5mm; /* Moves the entire grid down */
-            font-size: 0.7rem; /* Set font size to 0.7rem for the grid */
+            gap: 0;
+            margin-top: 5mm;
+            font-size: 0.7rem;
         }
         
         .grid p {
-            font-size: 0.7rem; /* Ensure font size is consistent with the grid */
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: Stag;
+            font-size: 0.7rem;
+            border: none;
+            background-color: transparent;
+            width: auto;
+            padding: 0;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -79,21 +106,24 @@
                     <h1>Tomato and Smoked Paprika Picos (75g)</h1>
                     <p>Ingredients: Picos (<strong>WHEAT</strong> flour, water, salt ,yeast, emulsifier: diacetyltartaric acid esters of mono- and diglycerides) sun-dried tomato paste (rehydrated tomatoes, vegetable oils (sunflower and rapeseed oil in varying proportions), salt, glucose syrup (<strong>SULPHITES</strong>), salt, paprika flakes, sweet smoked paprika, dried oregano.. Typical values per 100g Energy: 1546kJ/367kcal Fat: 8.2g Of which saturates: 1.2g Carbohydrates: 63g Of which sugars: 8.8g Fibre: 1.7g Protein: 8g Salt: 4g</p>
                     <p>For allergens please see ingredients in <strong>bold</strong>. May contain traces of Lupine, Soy, Milk, Mustard, Tree Nuts, Sesame, and Peanuts. Made in a factory that handles Celery and Egg.</p>
+
                     <div class="grid">
-                        <p>
-                            <strong>Net weight: </strong>
-                            <span>75g</span>
-                            <br>
-                            <strong>Best before: </strong>
-                            <span>28-Feb-25</span>
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 75g</span>
                         </p>
 
-                        <p>
-                            <strong>Stock item code: </strong>
-                            <span>LO075</span>
-                            <br>
-                            <strong>Batch no: </strong>
-                            <span>ZWR00378-4965</span>
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO075</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="28-Feb-25">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00378-</span>
+                            <input type="text" id="batchNoLast4" value="4965" maxlength="4">
                         </p>
                     </div>
                 </div>
