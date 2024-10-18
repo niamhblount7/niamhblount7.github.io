@@ -11,60 +11,60 @@
                 margin: 0;
             }
         }
-        
+
         body {
             margin: 0;
         }
-        
+
         .label {
             width: 100mm;
             height: 40mm;
         }
-        
+
         .label-bleed {
             width: 100mm;
             height: 40mm;
-            padding: 0mm; /* Remove padding to utilize full height */
+            padding: 0mm; /* No padding on top and bottom */
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align content to the top */
         }
-        
+
         .label-contents {
             width: 95mm;
-            height: 100%; /* Ensure full height */
             padding-left: 7mm;
+            padding-top: 0; /* Reduced top padding to push content up */
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Space out the content evenly */
-            align-items: flex-start; /* Align content to the start */
-            box-sizing: border-box; /* Ensure padding is included in the element's dimensions */
+            justify-content: flex-start; /* Align items to the top */
+            align-items: flex-start;
+            box-sizing: border-box;
         }
-        
+
         h1 {
             font-family: Stag;
             font-size: 0.95rem;
             font-weight: normal;
             margin: 0;
         }
-        
+
         p {
             font-size: 0.59rem;
             margin: 0;
             line-height: 1.2;
         }
-        
+
         strong {
             font-weight: 500;
         }
-        
+
         .grid {
-            width: 100%; /* Make grid full width */
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
             font-size: 0.7rem;
         }
-        
+
         .grid p {
             font-size: 0.7rem;
             display: flex;
