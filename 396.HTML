@@ -50,13 +50,22 @@
         input[type="text"]:focus {
             outline: none;
         }
+
+        .inline-inputs {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .inline-inputs input {
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="page">
         <div class="label">
             <p>Organic Arborio Rice X8</p>
-            <p>
+            <p class="inline-inputs">
                 <input type="text" id="bestBefore" value="28/02/2025" maxlength="10"> ZWR00292-
                 <input type="text" id="batchNoLast4" value="5475" maxlength="4">
             </p>
