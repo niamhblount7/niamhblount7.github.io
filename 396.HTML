@@ -43,34 +43,14 @@
             border: none;
             background-color: transparent;
             text-align: center;
-            padding: 2px; /* Reduced padding for smaller area around the text box */
+            width: 60px; /* Adjust width for the date input */
+            padding: 0;
             margin: 0; /* Reset default margin for input fields */
             line-height: 1; /* Prevent extra space in inputs */
-            width: 40px; /* Width for Batch code */
         }
 
         input[type="text"]:focus {
             outline: none; /* Remove focus outline for a cleaner look */
-        }
-
-        /* Inline input styling to keep elements on the same line */
-        .inline-inputs {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center; /* Center align elements horizontally */
-            gap: 0; /* No gap to bring inputs closer */
-        }
-
-        /* Adjust margins for Best Before and Batch code */
-        .best-before {
-            width: 60px; /* Width for Best Before date */
-            margin-right: 1mm; /* Minimal space to the right */
-            padding: 2px; /* Reduced padding for smaller area */
-        }
-
-        .batch-code {
-            margin-left: 0mm; /* Set to 0 for maximum closeness */
-            padding: 2px; /* Reduced padding for smaller area */
         }
     </style>
 </head>
@@ -78,10 +58,10 @@
     <div class="page">
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p class="inline-inputs">
-                <input type="text" class="best-before" value="16/08/2025" maxlength="10"> 
+            <p>
+                <input type="text" value="16/08/2025" maxlength="10" style="width: 80px;"> 
                 <span>ZWR00396-</span>
-                <input type="text" class="batch-code" value="5523" maxlength="4">
+                <input type="text" value="5523" maxlength="4" style="width: 40px;">
             </p>
             <p>LO038</p>
         </div>
