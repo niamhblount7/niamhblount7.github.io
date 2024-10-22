@@ -45,6 +45,8 @@
             text-align: center;
             width: auto;
             padding: 0;
+            margin: 0;
+            line-height: 1; /* Ensures close vertical alignment */
         }
 
         input[type="text"]:focus {
@@ -52,7 +54,16 @@
         }
 
         .inline-inputs {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: baseline; /* Aligns elements more closely together */
+            gap: -2px; /* Reduce the gap between the date, text, and number */
+        }
+
+        span {
+            line-height: 1; /* Keeps span text aligned with inputs */
+            padding: 0;
+            margin: 0;
         }
 
     </style>
@@ -62,8 +73,9 @@
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
             <p class="inline-inputs">
-                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> ZWR00396-
-                <input type="text" id="batchNoLast4" value="5523" maxlength="4">
+                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10" style="width: 120px;"> 
+                <span>ZWR00396-</span>
+                <input type="text" id="batchNoLast4" value="5523" maxlength="4" style="width: 50px;">
             </p>
             <p>LO038</p>
         </div>
