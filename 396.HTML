@@ -1,83 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Labels</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dunbar:wght@700&display=swap" rel="stylesheet">
-    <style>
-        @media print {
-            @page {
-                size: 148mm 209mm; /* A5 portrait size */
-                margin: 0;
-            }
-        }
-        .page {
-            width: 148mm;
-            height: 209mm;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        body {
-            font-family: 'Dunbar', sans-serif;
-            font-weight: 700;
-            margin: 0;
-        }
-        .label {
-            writing-mode: vertical-rl;
-            text-align: center;
-            font-size: 3.3em; /* Adjust as needed */
-        }
-        .label p {
-            margin: 0; /* Remove default margin */
-            margin-bottom: 1mm; /* Set space between lines to 1mm */
-        }
-        .label p:last-child {
-            margin-bottom: 0; /* Remove margin from the last paragraph */
-        }
+/* Editable input styling */
+input[type="text"] {
+    font-family: 'Dunbar', sans-serif;
+    font-size: 1em;
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    width: 30px; /* Adjust width as needed */
+    padding: 0;
+    margin: 0; /* Reset default margin for input fields */
+}
 
-        /* Editable input styling */
-        input[type="text"] {
-            font-family: 'Dunbar', sans-serif;
-            font-size: 1em;
-            border: none;
-            background-color: transparent;
-            text-align: center;
-            width: 30px; /* Adjust width as needed */
-            padding: 0;
-            margin: 0;
-        }
+input[type="text"]:focus {
+    outline: none; /* Remove focus outline for a cleaner look */
+}
 
-        input[type="text"]:focus {
-            outline: none;
-        }
+/* Inline input styling to keep elements on the same line */
+.inline-inputs {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; /* Control spacing between input fields */
+}
 
-        .inline-inputs {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0px; /* Reduce gap between inputs and text */
-        }
+/* Best Before date margin adjustment */
+.best-before {
+    margin-right: 2mm; /* Space between Best Before date and ZWR code */
+}
 
-        .batch-code {
-            margin-left: 2mm; /* Adjust spacing between ZWR and batch code */
-        }
-
-    </style>
-</head>
-<body>
-    <div class="page">
-        <div class="label">
-            <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p class="inline-inputs">
-                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
-                <span>ZWR00396-</span>
-                <input type="text" id="batchNoLast4" value="5523" maxlength="4" class="batch-code">
-            </p>
-            <p>LO038</p>
-        </div>
-    </div>
-
-    <!-- Repeat for additional labels as necessary -->
-</body>
-</html>
+/* Batch code margin adjustment */
+.batch-code {
+    margin-left: 2mm; /* Space between ZWR code and batch code */
+}
