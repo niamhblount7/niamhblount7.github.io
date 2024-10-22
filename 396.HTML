@@ -38,21 +38,19 @@
 
         /* Editable input styling */
         input[type="text"] {
-            font-family: 'Dunbar', sans-serif;
-            font-size: 1em;
+            font-family: 'Dunbar', sans-serif; /* Match the font of the label text */
+            font-size: 3.3em; /* Match the font size */
             border: none;
             background-color: transparent;
             text-align: center;
-            padding: 0; /* Remove padding for snug fit */
-            margin: 0; /* Reset default margin for input fields */
-            line-height: 1; /* Prevent extra space in inputs */
-            width: auto; /* Adjust width to fit content */
-            min-width: 0; /* Prevent minimum width */
-            display: inline; /* Use inline to prevent extra space */
+            width: auto; /* Automatically adjust width */
+            padding: 0; /* No padding */
+            margin: 0; /* Remove margins */
+            height: 1em; /* Adjust height for consistency */
         }
 
         input[type="text"]:focus {
-            outline: none; /* Remove focus outline for a cleaner look */
+            outline: none; /* Remove focus outline */
         }
     </style>
 </head>
@@ -60,10 +58,10 @@
     <div class="page">
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p style="margin-bottom: 1mm;">
-                <input type="text" value="16/08/2025" maxlength="10" style="width: auto; margin-right: 0; margin-top: 2px; margin-bottom: 2px;"> 
-                <span style="margin: 0;">ZWR00396-</span>
-                <input type="text" value="5523" maxlength="4" style="width: auto; margin-left: 0; margin-top: 2px; margin-bottom: 2px;">
+            <p>
+                <input type="text" value="16/08/2025" maxlength="10" style="width: 110px;"> 
+                ZWR00396- 
+                <input type="text" value="5523" maxlength="4" style="width: 60px;">
             </p>
             <p>LO038</p>
         </div>
