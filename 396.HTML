@@ -48,6 +48,7 @@
             width: 100px; /* Smaller width for date */
             display: inline; /* Keep inputs inline */
             white-space: nowrap; /* Prevent wrapping */
+            line-height: 1; /* Reduce line height for tighter spacing */
         }
 
         input[type="text"]:focus {
@@ -55,14 +56,10 @@
         }
 
         .inline-inputs {
-            display: inline; /* Keep elements inline */
-            white-space: nowrap; /* Prevent wrapping */
+            display: inline-flex; /* Use flexbox for tighter grouping */
+            align-items: center; /* Align items vertically */
+            gap: 0px; /* Remove gap between elements */
             cursor: move; /* Change cursor to indicate draggable area */
-        }
-
-        /* Adjustments for tighter grouping */
-        .batch-prefix {
-            margin: 0; /* Remove margin */
         }
 
         .batch-number {
@@ -77,7 +74,7 @@
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
             <p class="inline-inputs" id="draggable">
                 <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
-                <span class="batch-prefix">ZWR00396-</span>
+                <span>ZWR00396-</span>
                 <input type="text" id="batchNoLast4" value="5523" maxlength="4" class="batch-number">
             </p>
             <p>LO038</p>
