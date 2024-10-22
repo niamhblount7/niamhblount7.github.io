@@ -45,7 +45,7 @@
             text-align: center;
             padding: 0;
             margin: 0;
-            width: 100px; /* Smaller width for date */
+            width: 80px; /* Adjusted smaller width for date */
             display: inline; /* Keep inputs inline */
             white-space: nowrap; /* Prevent wrapping */
             line-height: 1; /* Reduce line height for tighter spacing */
@@ -58,8 +58,7 @@
         .inline-inputs {
             display: inline-flex; /* Use flexbox for tighter grouping */
             align-items: center; /* Align items vertically */
-            gap: 0px; /* Remove gap between elements */
-            cursor: move; /* Change cursor to indicate draggable area */
+            gap: 0; /* Remove gap between elements */
         }
 
         .batch-number {
@@ -72,7 +71,7 @@
     <div class="page">
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p class="inline-inputs" id="draggable">
+            <p class="inline-inputs">
                 <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
                 <span>ZWR00396-</span>
                 <input type="text" id="batchNoLast4" value="5523" maxlength="4" class="batch-number">
@@ -81,33 +80,6 @@
         </div>
     </div>
 
-    <script>
-        let isDragging = false;
-        let offsetY = 0;
-
-        function startDrag(e) {
-            isDragging = true;
-            offsetY = e.clientY - e.target.getBoundingClientRect().top;
-            document.addEventListener('mousemove', drag);
-            document.addEventListener('mouseup', stopDrag);
-        }
-
-        function drag(e) {
-            if (isDragging) {
-                const draggable = document.getElementById('draggable');
-                draggable.style.position = 'relative';
-                draggable.style.top = (e.clientY - offsetY) + 'px';
-            }
-        }
-
-        function stopDrag() {
-            isDragging = false;
-            document.removeEventListener('mousemove', drag);
-            document.removeEventListener('mouseup', stopDrag);
-        }
-
-        // Attach mousedown event to enable dragging
-        document.getElementById('draggable').addEventListener('mousedown', startDrag);
-    </script>
+    <!-- Repeat for additional labels as necessary -->
 </body>
 </html>
