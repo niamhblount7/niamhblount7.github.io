@@ -43,10 +43,9 @@
             border: none;
             background-color: transparent;
             text-align: center;
-            width: 30px; /* Smaller width for editable fields */
+            width: 30px; /* Adjust width as needed */
             padding: 0;
             margin: 0;
-            height: 1em; /* Adjust height to match text */
         }
 
         input[type="text"]:focus {
@@ -55,12 +54,13 @@
 
         .inline-inputs {
             display: inline-flex;
+            justify-content: center;
             align-items: center;
-            gap: 0; /* Reduce gap between inputs and text */
+            gap: 0px; /* Reduce gap between inputs and text */
         }
 
-        .inline-inputs span {
-            margin: 0 6px; /* Increase margin to space the ZWR code from the inputs */
+        .batch-code {
+            margin-left: 2mm; /* Adjust spacing between ZWR and batch code */
         }
 
     </style>
@@ -72,7 +72,7 @@
             <p class="inline-inputs">
                 <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
                 <span>ZWR00396-</span>
-                <input type="text" id="batchNoLast4" value="5523" maxlength="4">
+                <input type="text" id="batchNoLast4" value="5523" maxlength="4" class="batch-code">
             </p>
             <p>LO038</p>
         </div>
