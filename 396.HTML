@@ -46,6 +46,7 @@
             width: 30px; /* Adjust width as needed */
             padding: 0;
             margin: 0; /* Reset default margin for input fields */
+            line-height: 1; /* Prevent extra space in inputs */
         }
 
         input[type="text"]:focus {
@@ -56,19 +57,17 @@
         .inline-inputs {
             display: inline-flex;
             justify-content: center;
-            align-items: center;
-            gap: 0px; /* Control spacing between input fields */
+            align-items: center; /* Center align elements horizontally */
+            gap: 0; /* No gap to bring inputs closer */
         }
 
         /* Adjust margins for Best Before and Batch code */
         .best-before {
-            margin-right: 1mm; /* Closer space to ZWR code */
-            margin-bottom: 0; /* No bottom margin */
+            margin-right: 0.5mm; /* Closer space to ZWR code */
         }
 
         .batch-code {
-            margin-left: 1mm; /* Closer space to ZWR code */
-            margin-bottom: 0; /* No bottom margin */
+            margin-left: 0.5mm; /* Closer space to ZWR code */
         }
     </style>
 </head>
