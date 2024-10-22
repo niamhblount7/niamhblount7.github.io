@@ -43,10 +43,10 @@
             border: none;
             background-color: transparent;
             text-align: center;
-            width: auto;
             padding: 0;
             margin: 0;
-            line-height: 1; /* Ensures close vertical alignment */
+            line-height: 1; /* Ensures tight vertical alignment */
+            width: auto;
         }
 
         input[type="text"]:focus {
@@ -56,16 +56,15 @@
         .inline-inputs {
             display: inline-flex;
             justify-content: center;
-            align-items: baseline; /* Aligns elements more closely together */
-            gap: -2px; /* Reduce the gap between the date, text, and number */
+            align-items: center; /* Ensure tight vertical alignment */
+            gap: 0px; /* Remove gap between elements */
         }
 
         span {
-            line-height: 1; /* Keeps span text aligned with inputs */
             padding: 0;
             margin: 0;
+            line-height: 1; /* Keeps text vertically aligned */
         }
-
     </style>
 </head>
 <body>
@@ -73,14 +72,12 @@
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
             <p class="inline-inputs">
-                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10" style="width: 120px;"> 
+                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10" style="width: 115px;"> 
                 <span>ZWR00396-</span>
                 <input type="text" id="batchNoLast4" value="5523" maxlength="4" style="width: 50px;">
             </p>
             <p>LO038</p>
         </div>
     </div>
-
-    <!-- Repeat for additional labels as necessary -->
 </body>
 </html>
