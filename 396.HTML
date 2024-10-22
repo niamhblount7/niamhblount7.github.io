@@ -43,10 +43,9 @@
             border: none;
             background-color: transparent;
             text-align: center;
-            width: 40px; /* Set smaller width for inputs */
+            width: 40px; /* Width for bestBefore input */
             padding: 0;
             margin: 0;
-            display: inline; /* Keep inputs inline */
         }
 
         input[type="text"]:focus {
@@ -54,16 +53,16 @@
         }
 
         .inline-inputs {
-            display: inline-flex;
+            display: flex;
             justify-content: center;
             align-items: center;
-            gap: 2px; /* Small gap between inputs */
+            gap: 0; /* No gap between elements */
         }
 
         .batch-number {
-            width: 30px; /* Smaller fixed width for the batch number */
-            margin-left: 0; /* No left margin for tight alignment */
-            margin-top: 10px; /* Adjust this to move vertically */
+            width: 30px; /* Fixed width for the batch number */
+            margin-left: 0; /* No left margin */
+            margin-top: 0; /* Align vertically with date */
         }
     </style>
 </head>
@@ -71,12 +70,10 @@
     <div class="page">
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p>
-                <span>
-                    <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
-                    <span>ZWR00396-</span>
-                    <input type="text" class="batch-number" id="batchNoLast4" value="5523" maxlength="4">
-                </span>
+            <p class="inline-inputs">
+                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
+                <span>ZWR00396-</span>
+                <input type="text" class="batch-number" id="batchNoLast4" value="5523" maxlength="4">
             </p>
             <p>LO038</p>
         </div>
