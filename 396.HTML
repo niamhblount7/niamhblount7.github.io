@@ -45,7 +45,7 @@
             text-align: center;
             padding: 0;
             margin: 0;
-            width: auto;
+            width: auto; /* Allow natural width */
             line-height: 1; /* Ensure vertical alignment */
         }
 
@@ -56,11 +56,11 @@
         .inline-inputs {
             display: inline-flex;
             align-items: center; /* Aligns items in the center */
-            gap: 0; /* Remove gap to eliminate any spacing */
         }
 
         .inline-inputs span {
             margin: 0; /* Ensure no margin on span */
+            white-space: nowrap; /* Prevent wrapping */
         }
     </style>
 </head>
