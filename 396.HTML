@@ -43,7 +43,7 @@
             border: none;
             background-color: transparent;
             text-align: center;
-            width: 40px; /* Set a smaller fixed width for the inputs */
+            width: 40px; /* Set smaller width for inputs */
             padding: 0;
             margin: 0;
             display: inline; /* Keep inputs inline */
@@ -54,18 +54,16 @@
         }
 
         .inline-inputs {
-            display: inline-flex; /* Use flexbox for tighter grouping */
-            align-items: center; /* Align items vertically */
-            gap: 0; /* Remove gap between elements */
-        }
-
-        #bestBefore {
-            margin-right: 5px; /* Small margin to create a single space effect */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2px; /* Small gap between inputs */
         }
 
         .batch-number {
-            width: 30px; /* Set a smaller fixed width for the batch number */
-            margin-left: 2px; /* Small left margin for spacing */
+            width: 30px; /* Smaller fixed width for the batch number */
+            margin-left: 0; /* No left margin for tight alignment */
+            margin-top: -10px; /* Adjust this to move vertically */
         }
     </style>
 </head>
@@ -73,10 +71,12 @@
     <div class="page">
         <div class="label">
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
-            <p class="inline-inputs">
-                <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
-                <span>ZWR00396-</span>
-                <input type="text" id="batchNoLast4" value="5523" maxlength="4" class="batch-number">
+            <p>
+                <span>
+                    <input type="text" id="bestBefore" value="16/08/2025" maxlength="10"> 
+                    <span>ZWR00396-</span>
+                    <input type="text" class="batch-number" id="batchNoLast4" value="5523" maxlength="4">
+                </span>
             </p>
             <p>LO038</p>
         </div>
@@ -85,4 +85,3 @@
     <!-- Repeat for additional labels as necessary -->
 </body>
 </html>
-
