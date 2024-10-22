@@ -57,12 +57,10 @@
             display: inline-flex;
             justify-content: center;
             align-items: center; /* Ensure tight vertical alignment */
-            gap: 0px; /* Remove gap between elements */
         }
 
-        span {
-            padding: 0;
-            margin: 0;
+        .inline-inputs span {
+            margin: 0; /* Ensure no margin on span */
             line-height: 1; /* Keeps text vertically aligned */
         }
     </style>
@@ -73,7 +71,7 @@
             <p>Apricots, Figs, Seeds Organic Muesli X6</p>
             <p class="inline-inputs">
                 <input type="text" id="bestBefore" value="16/08/2025" maxlength="10" style="width: 115px;"> 
-                <span>ZWR00396-</span>
+                <span style="padding-left: 0; padding-right: 0;">ZWR00396-</span>
                 <input type="text" id="batchNoLast4" value="5523" maxlength="4" style="width: 50px;">
             </p>
             <p>LO038</p>
