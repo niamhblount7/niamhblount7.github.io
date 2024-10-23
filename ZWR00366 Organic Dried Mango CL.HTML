@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Labels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dunbar:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            @page {
+                size: 148mm 209mm; /* A5 portrait size */
+                margin: 0;
+            }
+        }
+        .page {
+            width: 148mm;
+            height: 209mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body {
+            font-family: 'Dunbar', sans-serif;
+            font-weight: 700;
+            margin: 0;
+        }
+        .label {
+            writing-mode: vertical-rl;
+            text-align: center;
+            font-size: 3.3em; /* Adjust as needed */
+        }
+        .label p {
+            margin: 0; /* Remove default margin */
+            margin-bottom: 1mm; /* Set space between lines to 1mm */
+        }
+        .label p:last-child {
+            margin-bottom: 0; /* Remove margin from the last paragraph */
+        }
+
+        /* Editable input styling */
+        input[type="text"] {
+            font-family: 'Dunbar', sans-serif;
+            font-weight: 700;
+            font-size: 1em;
+            border: none;
+            background-color: transparent;
+            text-align: center;
+            width: auto; /* Automatically adjust width */
+            padding: 0; /* No padding */
+            margin: 0; /* Remove margins */
+        }
+
+        input[type="text"]:focus {
+            outline: none; /* Remove focus outline */
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="label">
+            <p>Organic Dried Mango X 16</p>
+            <p>
+                
+                 ZWR00366-
+                <input type="text" value="PSE0001" maxlength="7" style="width: 60px; height: 230px;">
+                <input type="text" value="28/02/2025" maxlength="10" style="width: 60px; height: 300px;">
+            </p>
+            <p>LO064</p>
+        </div>
+    </div>
+
+    <!-- Repeat for additional labels as necessary -->
+</body>
+</html>
