@@ -60,7 +60,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0; /* Set to 0 for exact spacing */
-            margin-top: 5mm; /* Moves the entire grid down */
+            margin-top: 5mm;
             font-size: 0.7rem;
         }
         
@@ -80,7 +80,7 @@
 
         /* Add exactly one space */
         .inline strong::after {
-            content: "\00A0"; /* Unicode for non-breaking space */
+            content: "\00A0";
         }
 
         /* Editable input styling */
@@ -91,7 +91,7 @@
             background-color: transparent;
             width: auto;
             padding: 0;
-            margin-left: 3px; /* Space between label and input */
+            margin-left: 0; /* No space between label and input */
         }
 
         input[type="text"]:focus {
@@ -122,8 +122,7 @@
 
                         <p class="inline">
                             <strong>Batch no:</strong>
-                            <span>ZWR00354-PSE</span>
-                            <input type="text" id="batchNoLast4" value="4377" maxlength="4">
+                            <span>ZWR00354-PSE</span><input type="text" id="batchNoLast4" value="4377" maxlength="4">
                         </p>
                     </div>
                 </div>
