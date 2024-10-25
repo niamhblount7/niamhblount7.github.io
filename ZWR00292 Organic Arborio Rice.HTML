@@ -2,72 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labels</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dunbar:wght@700&display=swap" rel="stylesheet">
     <style>
         @media print {
             @page {
-                size: 148mm 209mm; /* A5 portrait size */
+                size: 100mm 40mm;
                 margin: 0;
             }
         }
-        .page {
-            width: 148mm;
-            height: 209mm;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        
         body {
-            font-family: 'Dunbar', sans-serif;
-            font-weight: 700;
+            margin: 0;
+            margin-top: 0 !important;
+        }
+        
+        .label {
+            width: 100mm;
+            height: 40mm;
+        }
+        
+        .label-bleed {
+            width: 100mm;
+            height: 40mm;
+            padding: 3mm;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .label-contents {
+            width: 95mm;
+            height: 38mm;
+            padding-left: 7mm;
+            padding-top: 5mm;
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+        
+        h1 {
+            font-family: Stag;
+            font-size: 0.95rem;
+            font-weight: normal;
             margin: 0;
         }
-        .label {
-            writing-mode: vertical-rl;
-            text-align: center;
-            font-size: 3.3em; /* Adjust as needed */
+        
+        p {
+            font-size: 0.59rem;
+            margin: 0;
+            line-height: 1.2;
         }
-        .label p {
-            margin: 0; /* Remove default margin */
-            margin-bottom: 1mm; /* Set space between lines to 1mm */
+        
+        strong {
+            font-weight: 500;
         }
-        .label p:last-child {
-            margin-bottom: 0; /* Remove margin from the last paragraph */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            margin-top: 5mm;
+            font-size: 0.7rem;
+        }
+        
+        .grid p {
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Inline spacing and centering */
+        .inline {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        /* Add exactly one space */
+        .inline strong::after {
+            content: "\00A0"; /* Unicode for non-breaking space */
         }
 
         /* Editable input styling */
         input[type="text"] {
-            font-family: 'Dunbar', sans-serif;
-            font-weight: 700;
-            font-size: 1em;
+            font-family: Stag;
+            font-size: 0.7rem;
             border: none;
             background-color: transparent;
-            text-align: center;
-            width: auto; /* Automatically adjust width */
-            padding: 0; /* No padding */
-            margin: 0; /* Remove margins */
+            width: auto;
+            padding: 0;
         }
 
         input[type="text"]:focus {
-            outline: none; /* Remove focus outline */
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <div class="page">
-        <div class="label">
-            <p>Organic Arborio Rice X 8</p>
-            <p>
-                
-                ZWR00292-
-                <input type="text" value="PSE0001" maxlength="7" style="width: 60px; height: 230px;">
-                <input type="text" value="28/02/2025" maxlength="10" style="width: 60px; height: 300px;">
-            </p>
-            <p>LO038</p>
+    <div class="label">
+        <div class="label-bleed">
+            <div class="label-contents">
+                <div style="font-family: Stag;">
+                    <h1>Organic Arborio Rice</h1>
+                    <p>Ingredients: Italian short grain rice*. (*Organic). Typical values per 100g Energy: 346 kcal / 1448 kJ Fat: 0.90g of which saturates: 0.20g Carbohydrate: 77.80g of which sugars: 0.30g Proteins: 6.20g Salt: 0.0125g</p>
+
+                    <div class="grid">
+                        <p class="inline">
+                            <strong>Net weight:</strong><span> 500g</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Stock item code:</strong><span> LO038</span>
+                        </p>
+
+                        <p class="inline">
+                            <strong>Best before:</strong> <input type="text" id="bestBefore" value="31-Jan-26">
+                        </p>
+
+                        <p class="inline">
+                            <strong>Batch no:</strong>
+                            <span>ZWR00293-</span>
+                            <input type="text" id="batchNoLast4" value="5505" maxlength="4">
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Repeat for additional labels as necessary -->
 </body>
 </html>
