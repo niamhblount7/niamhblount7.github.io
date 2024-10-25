@@ -96,6 +96,12 @@
         input[type="text"]:focus {
             outline: none;
         }
+
+        /* Adjust alignment for Batch no */
+        .batch-wrapper {
+            display: inline-flex;
+            align-items: baseline;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +127,10 @@
 
                         <p class="inline">
                             <strong>Batch no:</strong>
-                            <span>ZWR00293-PSE</span> <input type="text" id="batchNoLast4" value="5505" maxlength="4">
+                            <span class="batch-wrapper">
+                                <span>ZWR00293-PSE</span>
+                                <input type="text" id="batchNoLast4" value="5505" maxlength="4">
+                            </span>
                         </p>
                     </div>
                 </div>
