@@ -13,7 +13,12 @@
                 margin: 0;
             }
         }
-        
+        /* Align batch text and input */
+.batch-wrapper {
+    display: inline-flex;
+    align-items: baseline;
+}
+
         body {
             margin: 0;
             margin-top: 0 !important;
@@ -123,8 +128,10 @@
 
                         <p class="inline">
                             <strong>Batch no:</strong>
-                            <span>ZWR00297-</span>
+                            <span class="batch-wrapper">
+                            <span>ZWR00297-PSE</span>
                             <input type="text" id="batchNoLast4" value="5556" maxlength="4">
+                            </span>
                         </p>
                     </div>
                 </div>
